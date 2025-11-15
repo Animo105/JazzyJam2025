@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://j6rvkritji5c"]
+[gd_scene load_steps=11 format=3 uid="uid://j6rvkritji5c"]
 
 [ext_resource type="PackedScene" uid="uid://cvxo4w6ov724i" path="res://Player/player.tscn" id="1_f3sb7"]
 [ext_resource type="PackedScene" uid="uid://d177xkaeed2vn" path="res://Modules/menu test.tscn" id="2_fj7yv"]
+[ext_resource type="PackedScene" uid="uid://c53o3ep75d2kj" path="res://Modules/ball_pit.tscn" id="3_tlwt5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gv5m4"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -22,6 +23,11 @@ size = Vector2(20, 20)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_fj7yv"]
 data = PackedVector3Array(10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0, -10, 10, 0, -10)
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_fj7yv"]
+size = Vector2(40, 40)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_tlwt5"]
+
 [node name="world" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -39,5 +45,20 @@ shape = SubResource("ConcavePolygonShape3D_fj7yv")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_f3sb7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.607006, 1.2594543, -2.2441816)
+floor_stop_on_slope = false
+floor_max_angle = 1.0471976
 
 [node name="module test" parent="." instance=ExtResource("2_fj7yv")]
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.546583, -7.5646973, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2"]
+mesh = SubResource("PlaneMesh_fj7yv")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+shape = SubResource("WorldBoundaryShape3D_tlwt5")
+
+[node name="Ball Pit" parent="." instance=ExtResource("3_tlwt5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.932632, -7.380165, 0)

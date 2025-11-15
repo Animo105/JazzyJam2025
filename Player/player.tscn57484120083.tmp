@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cvxo4w6ov724i"]
+[gd_scene load_steps=14 format=3 uid="uid://cvxo4w6ov724i"]
 
 [ext_resource type="Script" uid="uid://ca7ll4bopkqpv" path="res://Player/player.gd" id="1_l8h54"]
 [ext_resource type="Script" uid="uid://t5xg36eqq4n0" path="res://Player/PlayerStates/PlayerFSM.gd" id="2_4ntmi"]
@@ -9,7 +9,6 @@
 [ext_resource type="Script" uid="uid://hdaj4nvpsw5w" path="res://Player/PlayerStates/RunState.gd" id="7_od3ui"]
 [ext_resource type="PackedScene" uid="uid://dk67l8wu2pmwk" path="res://UI/GUI.tscn" id="7_vtle1"]
 [ext_resource type="Texture2D" uid="uid://baych4ewo4ra2" path="res://Assets/spotlight.png" id="8_00tjw"]
-[ext_resource type="Script" uid="uid://cnotwt57yrto2" path="res://Player/PlayerStates/JumpState.gd" id="8_apopc"]
 [ext_resource type="Script" path="res://Player/spot_light_3d.gd" id="9_x3vf3"]
 
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_x3vf3"]
@@ -60,10 +59,6 @@ script = ExtResource("6_fhl08")
 
 [node name="Run" type="Node" parent="PlayerFSM"]
 script = ExtResource("7_od3ui")
-
-[node name="Jump" type="Node" parent="PlayerFSM"]
-script = ExtResource("8_apopc")
-metadata/_custom_type_script = "uid://cnotwt57yrto2"
 
 [node name="regularCollisionShape" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)

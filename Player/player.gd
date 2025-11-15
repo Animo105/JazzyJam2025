@@ -9,13 +9,14 @@ class_name Player
 const DEFAUT_CAM_POS : Vector3 = Vector3(0, 1.2, 0)
 const CROUCH_CAM_POS : Vector3 = Vector3(0, 0.4, 0)
 
-const JUMP_VELOCITY = 5.5
+const JUMP_VELOCITY = 6
+
+var basic_fov = 75
 
 var pos_tween : Tween
 var fov_tween : Tween
 
 func set_crouch(enable : bool):
-	print("set crouch", enable)
 	if (enable):
 		crouch_collision_shape.disabled = false
 		regular_collision_shape.disabled = true
@@ -32,25 +33,33 @@ func set_crouch(enable : bool):
 		pos_tween = create_tween()
 		pos_tween.tween_property(camera, "position", DEFAUT_CAM_POS, 0.1)
 
-
 @onready var fsm: PlayerFSM = $PlayerFSM
 
+func _ready() -> void:
+	camera.fov = basic_fov
+
 var last_direction : Vector3
+
+func _process(delta: float) -> void:
+	fsm.update(delta)
 
 func _physics_process(delta: float) -> void:
 	if fov_tween:
 		fov_tween.kill()
 	fov_tween = create_tween()
-	fov_tween.tween_property(camera, 'fov', max(abs(velocity.x), abs(velocity.z))+75, 0.1)
+	fov_tween.tween_property(camera, 'fov', get_greater_velocity()+basic_fov, 0.1)
 	fsm.physics_update(delta)
 	move_and_slide()
+
+func get_greater_velocity()->float:
+	return max(abs(velocity.x), abs(velocity.z))
 
 func jump()->void:
 	velocity.y = JUMP_VELOCITY
 
 func move_player(speed : float, acceleration : float, deceleration : float)->void:
 	var input_dir := Input.get_vector("left", "right", "forward", "back")
-	var direction := (neck.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		velocity.x = move_toward(velocity.x, direction.x * speed, acceleration)
 		velocity.z = move_toward(velocity.z, direction.z * speed, acceleration)
@@ -68,7 +77,7 @@ func _input(event: InputEvent) -> void:
 	
 	if event is InputEventMouseMotion:
 		if not Input.mouse_mode == Input.MOUSE_MODE_CAPTURED: return # si mouse pas capture, empêche de bouger
-		neck.rotate_y(deg_to_rad(-event.relative.x * Global.mouse_sensitivity)) # rotate sur y axis le personnage (left/right)
+		rotate_y(deg_to_rad(-event.relative.x * Global.mouse_sensitivity)) # rotate sur y axis le personnage (left/right)
 		camera.rotate_x(deg_to_rad(-event.relative.y * Global.mouse_sensitivity)) # rotate sur x axis la camera (up/down)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-70), deg_to_rad(70)) # clamp la rotation
 

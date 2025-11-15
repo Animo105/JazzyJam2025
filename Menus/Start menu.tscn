@@ -45,7 +45,6 @@ text = "Quit"
 
 [node name="menu music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_hdwwg")
-volume_db = 8.0
 
 [connection signal="pressed" from="Menu/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Menu/Help" to="." method="_on_help_pressed"]

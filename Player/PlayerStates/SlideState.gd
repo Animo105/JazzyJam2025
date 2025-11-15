@@ -4,8 +4,8 @@ class_name PlayerSlideState
 @onready var crouch_collision_shape: CollisionShape3D = $"../../crouchCollisionShape"
 @onready var regular_collision_shape: CollisionShape3D = $"../../regularCollisionShape"
 
-const ACCELERATION = 15
-const DECELERATION = 12
+const ACCELERATION = 20
+const DECELERATION = 17
 var dir : Vector3
 
 func enter():
@@ -20,5 +20,5 @@ func physics_update(delta:float):
 	player.apply_gravity(delta)
 	player.velocity.x = move_toward(player.velocity.x, 0, DECELERATION * delta)
 	player.velocity.z = move_toward(player.velocity.z, 0, DECELERATION * delta)
-	if player.velocity.x == 0 && player.velocity.z == 0:
+	if Input.is_action_just_released("slide"):
 		fsm.change_state('crouch')

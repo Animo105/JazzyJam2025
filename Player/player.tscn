@@ -9,9 +9,8 @@
 [ext_resource type="Script" uid="uid://hdaj4nvpsw5w" path="res://Player/PlayerStates/RunState.gd" id="7_od3ui"]
 [ext_resource type="PackedScene" uid="uid://dk67l8wu2pmwk" path="res://UI/GUI.tscn" id="7_vtle1"]
 [ext_resource type="Texture2D" uid="uid://baych4ewo4ra2" path="res://Assets/spotlight.png" id="8_00tjw"]
+[ext_resource type="Script" path="res://Player/PlayerStates/JumpState.gd" id="8_apopc"]
 [ext_resource type="Script" uid="uid://da10f7kbhlys8" path="res://Player/spot_light_3d.gd" id="9_x3vf3"]
-[ext_resource type="Script" uid="uid://cnotwt57yrto2" path="res://Player/PlayerStates/JumpState.gd" id="8_apopc"]
-[ext_resource type="Script" path="res://Player/spot_light_3d.gd" id="9_x3vf3"]
 
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_x3vf3"]
 
@@ -64,7 +63,6 @@ script = ExtResource("7_od3ui")
 
 [node name="Jump" type="Node" parent="PlayerFSM"]
 script = ExtResource("8_apopc")
-metadata/_custom_type_script = "uid://cnotwt57yrto2"
 
 [node name="regularCollisionShape" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
@@ -80,13 +78,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 [node name="camera" type="Camera3D" parent="neck"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
 
+[node name="dimlight" type="OmniLight3D" parent="neck/camera"]
+light_color = Color(0.3180198, 0.31801978, 0.31801975, 1)
+light_energy = 0.5
+light_volumetric_fog_energy = 0.5
+
 [node name="flashlight" type="SpotLight3D" parent="neck/camera"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.65221643, 0)
 light_color = Color(1, 1, 0.49019608, 1)
+light_energy = 3.0
 light_projector = ExtResource("8_00tjw")
 shadow_enabled = true
-spot_range = 10.502275
-spot_angle = 33.306637
+spot_range = 32.19505
+spot_angle = 48.337364
 script = ExtResource("9_x3vf3")
 
 [node name="Gui" parent="." instance=ExtResource("7_vtle1")]

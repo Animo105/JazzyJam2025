@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cnhpi05ymns43"]
+[gd_scene load_steps=5 format=3 uid="uid://cnhpi05ymns43"]
 
 [ext_resource type="Script" uid="uid://drfn1q0gobjn" path="res://Menus/start_menu.gd" id="1_ga2iw"]
 [ext_resource type="AudioStream" uid="uid://dvrvkvpnowtx0" path="res://Assets/Musics/A l'aide.mp3" id="2_n2gf6"]
 [ext_resource type="AudioStream" uid="uid://21m01mdoag8" path="res://Assets/Musics/GameJazz_Menu.mp3" id="3_hdwwg"]
+[ext_resource type="Texture2D" uid="uid://yniuckfflrkg" path="res://Assets/mcdo.jpg" id="4_tsqbs"]
 
 [node name="StartMenu" type="Control"]
 layout_mode = 3
@@ -45,6 +46,11 @@ text = "Quit"
 
 [node name="menu music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_hdwwg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(587, 774)
+scale = Vector2(0.5041887, 0.42372134)
+texture = ExtResource("4_tsqbs")
 
 [connection signal="pressed" from="Menu/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Menu/Help" to="." method="_on_help_pressed"]

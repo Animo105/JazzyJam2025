@@ -34,7 +34,7 @@ func transition():
 	if (Stamina.stamina <= 0):
 		Stamina.stamina_bar_color.emit()
 		fsm.change_state("ground")
-	if Input.is_action_just_pressed("Run"):
+	if Input.is_action_just_released("Run"):
 		fsm.change_state("ground")
 	if Input.is_action_just_pressed("slide"):
 		if(Stamina.stamina >= 40):

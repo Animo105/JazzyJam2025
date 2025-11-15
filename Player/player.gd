@@ -37,6 +37,12 @@ func set_crouch(enable : bool):
 
 @onready var fsm: PlayerFSM = $PlayerFSM
 
+func get_height()->float:
+	if regular_collision_shape.disabled:
+		return 2.0
+	else:
+		return 3.0
+
 func _ready() -> void:
 	camera.fov = basic_fov
 

@@ -1,6 +1,6 @@
 extends Control
 
-@onready var WORLD = load("uid://j6rvkritji5c")
+
 @onready var audio_stream_player: AudioStreamPlayer = $Menu/Help/AudioStreamPlayer
 @onready var menu_music: AudioStreamPlayer = $"menu music"
 

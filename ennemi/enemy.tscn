@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://861by1lecvay"]
+
+[ext_resource type="Script" uid="uid://c0sxhgupydgde" path="res://ennemi/enemy_script.gd" id="1_f3kwp"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ypufj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ypufj"]
+albedo_color = Color(1, 0.34901962, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_m527v"]
+material = SubResource("StandardMaterial3D_ypufj")
+size = Vector3(0.7, 0.26, 0.39)
+
+[node name="Enemy" type="Node3D"]
+script = ExtResource("1_f3kwp")
+
+[node name="NavigationAgent" type="NavigationAgent3D" parent="."]
+debug_enabled = true
+
+[node name="ChaseTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="RayCast" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+collision_mask = 3
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_ypufj")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4112533, -0.3402614)
+mesh = SubResource("BoxMesh_m527v")

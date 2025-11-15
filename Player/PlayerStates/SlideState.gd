@@ -9,17 +9,12 @@ const DECELERATION = 12
 var dir : Vector3
 
 func enter():
-<<<<<<< Updated upstream
 	if(Stamina.stamina >= 40):
 		Stamina.stamina -= 40
 		dir = player.last_direction
 		player.velocity = dir * ACCELERATION
 		player.set_crouch(true)
-=======
-	player.set_crouch(true)
-	dir = player.last_direction
-	player.velocity = dir * ACCELERATION
->>>>>>> Stashed changes
+
 
 func exit():
 	player.set_crouch(false)

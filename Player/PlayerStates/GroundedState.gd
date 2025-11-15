@@ -17,6 +17,8 @@ func transition():
 		if (Stamina.stamina >= 10):
 			Stamina.stamina -= 10
 			player.jump()
+		else:
+			Stamina.stamina_bar_color.emit()
 	if Input.is_action_just_pressed("slide"):
 		fsm.change_state('crouch')
 	if !player.is_on_floor():

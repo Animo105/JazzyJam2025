@@ -1,6 +1,7 @@
 extends Node
 
 signal on_stamina_update(int)
+signal stamina_bar_color()
 
 var stamina : int:
 	set(value):
@@ -32,10 +33,8 @@ func _process(delta: float) -> void:
 
 func _on_timerStaminaUse_timeout():
 	stamina -= 1
-	print(stamina)
 
 func _on_timerStaminaRegen_timeout():
 	if(state == _State.Regen):
 		if (stamina < 100):
 			stamina += 1
-			print(stamina)

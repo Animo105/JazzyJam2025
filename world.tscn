@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://j6rvkritji5c"]
 
 [ext_resource type="PackedScene" uid="uid://cvxo4w6ov724i" path="res://Player/player.tscn" id="1_f3sb7"]
-[ext_resource type="PackedScene" uid="uid://d177xkaeed2vn" path="res://untitled.tscn" id="2_fj7yv"]
+[ext_resource type="PackedScene" path="res://untitled.tscn" id="2_fj7yv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gv5m4"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -23,10 +23,6 @@ size = Vector2(20, 20)
 data = PackedVector3Array(10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0, -10, 10, 0, -10)
 
 [node name="world" type="Node3D"]
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
-shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_fj7yv")

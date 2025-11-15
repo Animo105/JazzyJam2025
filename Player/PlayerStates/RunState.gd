@@ -23,10 +23,15 @@ func transition():
 	if Input.is_action_just_released("forward"):
 		fsm.change_state("ground")
 	if (Stamina.stamina <= 0):
+		Stamina.stamina_bar_color.emit()
 		fsm.change_state("ground")
 	if Input.is_action_just_pressed("Run"):
 		fsm.change_state("ground")
 	if Input.is_action_just_pressed("slide"):
-		fsm.change_state('slide')
+		if(Stamina.stamina >= 40):
+			Stamina.stamina -= 40
+			fsm.change_state('slide')
+		else:
+			Stamina.stamina_bar_color.emit()
 	if !player.is_on_floor():
 		fsm.change_state('air')

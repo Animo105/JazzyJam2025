@@ -14,7 +14,7 @@ func _ready() -> void:
 	timer.timeout.connect(_on_timer_timeout)
 	timer.wait_time = 5
 	timer.autostart = true
-	timer.start()
+	#timer.start()
 	power = 100
 
 

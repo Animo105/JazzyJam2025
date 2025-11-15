@@ -6,19 +6,35 @@
 
 [node name="Gui" type="CanvasLayer"]
 
-[node name="power" type="Sprite2D" parent="."]
-position = Vector2(67.75, 62.362244)
-scale = Vector2(0.22447014, 0.22447014)
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="power" type="Sprite2D" parent="Control"]
+position = Vector2(47.75, 42.323708)
+scale = Vector2(0.14739886, 0.14739886)
 texture = ExtResource("1_644iy")
 hframes = 5
 frame = 4
 script = ExtResource("2_yki11")
 
-[node name="sprintbar" type="ProgressBar" parent="."]
-offset_left = 347.0
-offset_top = 592.0
-offset_right = 762.0
-offset_bottom = 619.0
+[node name="sprintbar" type="ProgressBar" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -207.5
+offset_top = -62.0
+offset_right = 207.5
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 0
 value = 50.0
 show_percentage = false
 script = ExtResource("3_dl5f7")

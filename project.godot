@@ -17,9 +17,23 @@ config/icon="res://Assets/icon.svg"
 
 [autoload]
 
+Global="*res://Globals/global.gd"
 Power="*res://Globals/power.gd"
 Stamina="*res://Globals/stamina.gd"
-Global="*res://Globals/global.gd"
+
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
+[file_customization]
+
+folder_colors={
+"res://Assets/": "yellow",
+"res://Modules/": "blue",
+"res://Player/": "green",
+"res://ennemi/": "red"
+}
 
 [input]
 

@@ -21,7 +21,7 @@ func _ready() -> void:
 	#timerStaminaUse.start()
 	add_child(timerStaminaRegen)
 	timerStaminaRegen.timeout.connect(_on_timerStaminaRegen_timeout)
-	timerStaminaRegen.wait_time = 0.5
+	timerStaminaRegen.wait_time = 0.1
 	timerStaminaRegen.autostart = true
 	timerStaminaRegen.start()
 	stamina = 100

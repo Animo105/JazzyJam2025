@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cvxo4w6ov724i"]
+[gd_scene load_steps=13 format=3 uid="uid://cvxo4w6ov724i"]
 
 [ext_resource type="Script" uid="uid://ca7ll4bopkqpv" path="res://Player/player.gd" id="1_l8h54"]
 [ext_resource type="Script" uid="uid://t5xg36eqq4n0" path="res://Player/PlayerStates/PlayerFSM.gd" id="2_4ntmi"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://hdaj4nvpsw5w" path="res://Player/PlayerStates/RunState.gd" id="7_od3ui"]
 [ext_resource type="PackedScene" uid="uid://dk67l8wu2pmwk" path="res://UI/GUI.tscn" id="7_vtle1"]
 [ext_resource type="Texture2D" uid="uid://baych4ewo4ra2" path="res://Assets/spotlight.png" id="8_00tjw"]
+[ext_resource type="Script" uid="uid://da10f7kbhlys8" path="res://Player/spot_light_3d.gd" id="9_x3vf3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3v3li"]
 radius = 0.7
@@ -56,12 +57,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 [node name="camera" type="Camera3D" parent="neck"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="neck/camera"]
+[node name="flashlight" type="SpotLight3D" parent="neck/camera"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.65221643, 0)
 light_color = Color(1, 1, 0.49019608, 1)
-light_energy = 3.0
 light_projector = ExtResource("8_00tjw")
 shadow_enabled = true
-spot_range = 10.0
+spot_range = 10.502275
+spot_angle = 33.306637
+script = ExtResource("9_x3vf3")
 
 [node name="Gui" parent="." instance=ExtResource("7_vtle1")]

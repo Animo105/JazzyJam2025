@@ -1,3 +1,49 @@
-[gd_scene format=3 uid="uid://j6rvkritji5c"]
+[gd_scene load_steps=8 format=3 uid="uid://j6rvkritji5c"]
 
-[node name="World" type="Node3D"]
+[ext_resource type="PackedScene" uid="uid://bu4ib0wgijia7" path="res://ennemi/ennemi.tscn" id="1_f3sb7"]
+[ext_resource type="Script" uid="uid://dp1bb35ow4sli" path="res://ennemi/FollowNode.gd" id="2_fj7yv"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gv5m4"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_f3sb7"]
+sky_material = SubResource("ProceduralSkyMaterial_gv5m4")
+
+[sub_resource type="Environment" id="Environment_fj7yv"]
+background_mode = 2
+sky = SubResource("Sky_f3sb7")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_gv5m4"]
+size = Vector2(20, 20)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gv5m4"]
+points = PackedVector3Array(2.0317461, 0.031746034, 2.0317461, -2.0317461, -0.031746034, -2.0317461, -2.0317461, 0.031746034, -2.0317461, 2.0317461, -0.031746034, -2.0317461, -2.0317461, -0.031746034, 2.0317461, -2.0317461, 0.031746034, 2.0317461, 2.0317461, 0.031746034, -2.0317461, 2.0317461, -0.031746034, 2.0317461)
+
+[node name="world" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_fj7yv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_gv5m4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_gv5m4")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.9984862, 0, 0.055002492, 0.029733138, 0.8412939, 0.53975976, -0.046273258, 0.54057807, -0.84002036, 0, 6.257348, -10.527197)
+
+[node name="Ennemi" parent="." instance=ExtResource("1_f3sb7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5107563, 1.3464079, 0)
+
+[node name="FollowNode" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.294424, 2.9264884, -3.295126)
+script = ExtResource("2_fj7yv")
+metadata/_custom_type_script = "uid://dp1bb35ow4sli"

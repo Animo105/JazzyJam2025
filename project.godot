@@ -11,5 +11,6 @@ config_version=5
 [application]
 
 config/name="JazzyJam"
+run/main_scene="uid://j6rvkritji5c"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://Assets/icon.svg"

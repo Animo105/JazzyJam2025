@@ -11,25 +11,26 @@ const CROUCH_CAM_POS : Vector3 = Vector3(0, 0.4, 0)
 
 const JUMP_VELOCITY = 5.5
 
-var tween : Tween
+var pos_tween : Tween
+var fov_tween : Tween
 
 func set_crouch(enable : bool):
 	print("set crouch", enable)
 	if (enable):
 		crouch_collision_shape.disabled = false
 		regular_collision_shape.disabled = true
-		if tween:
-			tween.kill()
-		tween = create_tween()
-		tween.tween_property(camera, "position", CROUCH_CAM_POS, 0.1)
+		if pos_tween:
+			pos_tween.kill()
+		pos_tween = create_tween()
+		pos_tween.tween_property(camera, "position", CROUCH_CAM_POS, 0.1)
 		
 	else:
 		crouch_collision_shape.disabled = true
 		regular_collision_shape.disabled = false
-		if tween:
-			tween.kill()
-		tween = create_tween()
-		tween.tween_property(camera, "position", DEFAUT_CAM_POS, 0.1)
+		if pos_tween:
+			pos_tween.kill()
+		pos_tween = create_tween()
+		pos_tween.tween_property(camera, "position", DEFAUT_CAM_POS, 0.1)
 
 
 @onready var fsm: PlayerFSM = $PlayerFSM
@@ -37,6 +38,10 @@ func set_crouch(enable : bool):
 var last_direction : Vector3
 
 func _physics_process(delta: float) -> void:
+	if fov_tween:
+		fov_tween.kill()
+	fov_tween = create_tween()
+	fov_tween.tween_property(camera, 'fov', max(abs(velocity.x), abs(velocity.z))+75, 0.1)
 	fsm.physics_update(delta)
 	move_and_slide()
 

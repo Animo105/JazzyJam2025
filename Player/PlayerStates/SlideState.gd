@@ -17,7 +17,6 @@ func exit():
 	player.set_crouch(false)
 
 func physics_update(delta:float):
-	print(player.velocity)
 	player.apply_gravity(delta)
 	player.velocity.x = move_toward(player.velocity.x, 0, DECELERATION * delta)
 	player.velocity.z = move_toward(player.velocity.z, 0, DECELERATION * delta)

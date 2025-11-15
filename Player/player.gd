@@ -5,6 +5,8 @@ class_name Player
 @onready var camera: Camera3D = $neck/camera
 @onready var regular_collision_shape: CollisionShape3D = $regularCollisionShape
 @onready var crouch_collision_shape: CollisionShape3D = $crouchCollisionShape
+@onready var detection: Area3D = $Detection
+@onready var camera_effects: CameraEffetcs = $neck/camera/CameraCanvas
 
 const DEFAUT_CAM_POS : Vector3 = Vector3(0, 1.2, 0)
 const CROUCH_CAM_POS : Vector3 = Vector3(0, 0.4, 0)
@@ -12,7 +14,7 @@ const CROUCH_CAM_POS : Vector3 = Vector3(0, 0.4, 0)
 const JUMP_VELOCITY = 6
 
 var basic_fov = 75
-
+var is_hiding : bool = false
 var pos_tween : Tween
 var fov_tween : Tween
 

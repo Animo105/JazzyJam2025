@@ -4,19 +4,6 @@ class_name PlayerGroundState
 const SPEED : float = 5.0
 const ACCELERATION : float = 3.0
 const DECELERATION : float = 4.0
-@onready var stepup: CollisionShape3D = $"../../stepup"
-@onready var stepup_2: CollisionShape3D = $"../../stepup2"
-@onready var stepup_3: CollisionShape3D = $"../../stepup3"
-
-func enter():
-	stepup.disabled = false
-	stepup_2.disabled = false
-	stepup_3.disabled = false
-
-func exit():
-	stepup.disabled = true
-	stepup_2.disabled = true
-	stepup_3.disabled = true
 
 func physics_update(_delta:float):
 	player.move_player(SPEED, ACCELERATION, DECELERATION)

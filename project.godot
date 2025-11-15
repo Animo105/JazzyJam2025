@@ -13,13 +13,13 @@ config_version=5
 config/name="JazzyJam"
 run/main_scene="uid://cnhpi05ymns43"
 config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="res://Assets/icon.svg"
+config/icon="res://Assets/png/icon.svg"
 
 [autoload]
 
+Global="*res://Globals/global.gd"
 Power="*res://Globals/power.gd"
 Stamina="*res://Globals/stamina.gd"
-Global="*res://Globals/global.gd"
 
 [display]
 
@@ -82,3 +82,8 @@ flashlight={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(112, 20),"global_position":Vector2(121, 68),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
+
+[layer_names]
+
+3d_physics/layer_1="World"
+3d_physics/layer_4="Hiding zones"

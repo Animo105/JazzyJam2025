@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://dk67l8wu2pmwk"]
 
-[ext_resource type="Texture2D" uid="uid://dvf6g2ft4bmgx" path="res://Assets/battery-sheet.png" id="1_644iy"]
+[ext_resource type="Texture2D" uid="uid://dvf6g2ft4bmgx" path="res://Assets/png/battery-sheet.png" id="1_644iy"]
 [ext_resource type="Script" uid="uid://b0l4lusxfjoeh" path="res://UI/power.gd" id="2_yki11"]
 [ext_resource type="Script" uid="uid://c5aeyywnx30uh" path="res://UI/sprintbar.gd" id="3_dl5f7"]
-[ext_resource type="Script" uid="uid://ccpl72mye4mo4" path="res://UI/window.gd" id="4_n3xue"]
+[ext_resource type="Script" path="res://UI/window.gd" id="4_n3xue"]
 
 [node name="Gui" type="CanvasLayer"]
 

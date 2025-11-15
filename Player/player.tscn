@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cvxo4w6ov724i"]
+[gd_scene load_steps=17 format=3 uid="uid://cvxo4w6ov724i"]
 
 [ext_resource type="Script" uid="uid://ca7ll4bopkqpv" path="res://Player/player.gd" id="1_l8h54"]
 [ext_resource type="Script" uid="uid://t5xg36eqq4n0" path="res://Player/PlayerStates/PlayerFSM.gd" id="2_4ntmi"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://baych4ewo4ra2" path="res://Assets/spotlight.png" id="8_00tjw"]
 [ext_resource type="Script" path="res://Player/PlayerStates/JumpState.gd" id="8_apopc"]
 [ext_resource type="Script" uid="uid://da10f7kbhlys8" path="res://Player/spot_light_3d.gd" id="9_x3vf3"]
+[ext_resource type="PackedScene" uid="uid://bb0tpgsd3j0mg" path="res://Player/Screen Effects/shader_canvas.tscn" id="11_5htga"]
 
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_x3vf3"]
 
@@ -20,6 +21,9 @@ height = 3.0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k53q1"]
 radius = 0.7
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_apopc"]
+size = Vector3(0.5, 1, 0.5)
 
 [node name="CharacterBody2D" type="CharacterBody3D"]
 script = ExtResource("1_l8h54")
@@ -93,7 +97,18 @@ spot_range = 32.19505
 spot_angle = 48.337364
 script = ExtResource("9_x3vf3")
 
+[node name="CameraCanvas" parent="neck/camera" instance=ExtResource("11_5htga")]
+layer = 2
+
 [node name="Gui" parent="." instance=ExtResource("7_vtle1")]
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 target_position = Vector3(0, -0.6, 0)
+
+[node name="Detection" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Detection"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_apopc")

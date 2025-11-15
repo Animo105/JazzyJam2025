@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvf6g2ft4bmgx"
-path="res://.godot/imported/battery-sheet.png-f4656c114d06c32fa3ac6d8fcb55c7b7.ctex"
+uid="uid://bdfjkdmm7s5b8"
+path="res://.godot/imported/icon.svg-68d02db5c1868f1ddc0d604bc7d0154f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/battery-sheet.png"
-dest_files=["res://.godot/imported/battery-sheet.png-f4656c114d06c32fa3ac6d8fcb55c7b7.ctex"]
+source_file="res://Assets/png/icon.svg"
+dest_files=["res://.godot/imported/icon.svg-68d02db5c1868f1ddc0d604bc7d0154f.ctex"]
 
 [params]
 
@@ -38,3 +38,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

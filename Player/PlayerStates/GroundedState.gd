@@ -10,8 +10,13 @@ func physics_update(_delta:float):
 	transition()
 
 func transition():
+	if Input.is_action_just_pressed("Run"):
+		if (Stamina.stamina > 0):
+			fsm.change_state("run")
 	if Input.is_action_just_pressed("jump"):
-		player.jump()
+		if (Stamina.stamina >= 40):
+			Stamina.stamina -= 40
+			player.jump()
 	if Input.is_action_just_pressed("slide"):
 		fsm.change_state('slide')
 	if !player.is_on_floor():

@@ -10,13 +10,15 @@ var dir : Vector3
 var basic_camera_pos : Vector3
 
 func enter():
-	crouch_collision_shape.disabled = false
-	regular_collision_shape.disabled = true
-	dir = player.last_direction
-	player.velocity = dir * ACCELERATION
-	var tween :Tween = create_tween()
-	basic_camera_pos = camera.position
-	tween.tween_property(camera, "position", Vector3(basic_camera_pos.x, basic_camera_pos.y - 1.5, basic_camera_pos.z), 0.1)
+	if(Stamina.stamina >= 80):
+		Stamina.stamina -= 80
+		crouch_collision_shape.disabled = false
+		regular_collision_shape.disabled = true
+		dir = player.last_direction
+		player.velocity = dir * ACCELERATION
+		var tween :Tween = create_tween()
+		basic_camera_pos = camera.position
+		tween.tween_property(camera, "position", Vector3(basic_camera_pos.x, basic_camera_pos.y - 1.5, basic_camera_pos.z), 0.1)
 
 func exit():
 	regular_collision_shape.disabled = false

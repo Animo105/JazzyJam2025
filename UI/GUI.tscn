@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dk67l8wu2pmwk"]
+
+[ext_resource type="Texture2D" uid="uid://dvf6g2ft4bmgx" path="res://Assets/battery-sheet.png" id="1_644iy"]
+[ext_resource type="Script" uid="uid://b0l4lusxfjoeh" path="res://UI/power.gd" id="2_yki11"]
+[ext_resource type="Script" uid="uid://c5aeyywnx30uh" path="res://UI/sprintbar.gd" id="3_dl5f7"]
+
+[node name="Gui" type="CanvasLayer"]
+
+[node name="power" type="Sprite2D" parent="."]
+position = Vector2(67.75, 62.362244)
+scale = Vector2(0.22447014, 0.22447014)
+texture = ExtResource("1_644iy")
+hframes = 5
+frame = 4
+script = ExtResource("2_yki11")
+
+[node name="sprintbar" type="ProgressBar" parent="."]
+modulate = Color(0, 1, 1, 1)
+offset_left = 347.0
+offset_top = 592.0
+offset_right = 762.0
+offset_bottom = 619.0
+value = 50.0
+show_percentage = false
+script = ExtResource("3_dl5f7")

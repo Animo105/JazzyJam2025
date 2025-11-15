@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dvrvkvpnowtx0"
+path="res://.godot/imported/A l'aide.mp3-6af17658365790cf28a272532f36a232.mp3str"
+
+[deps]
+
+source_file="res://Assets/A l'aide.mp3"
+dest_files=["res://.godot/imported/A l'aide.mp3-6af17658365790cf28a272532f36a232.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

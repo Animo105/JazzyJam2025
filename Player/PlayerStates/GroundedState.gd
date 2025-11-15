@@ -14,10 +14,10 @@ func transition():
 		if (Stamina.stamina > 0):
 			fsm.change_state("run")
 	if Input.is_action_just_pressed("jump"):
-		if (Stamina.stamina >= 40):
-			Stamina.stamina -= 40
+		if (Stamina.stamina >= 10):
+			Stamina.stamina -= 10
 			player.jump()
 	if Input.is_action_just_pressed("slide"):
-		fsm.change_state('slide')
+		fsm.change_state('crouch')
 	if !player.is_on_floor():
 		fsm.change_state('air')

@@ -5,26 +5,24 @@ class_name PlayerSlideState
 @onready var regular_collision_shape: CollisionShape3D = $"../../regularCollisionShape"
 
 const ACCELERATION = 15
-const DECELERATION = 9
+const DECELERATION = 12
 var dir : Vector3
-var basic_camera_pos : Vector3
 
 func enter():
-	if(Stamina.stamina >= 80):
-		Stamina.stamina -= 80
-		crouch_collision_shape.disabled = false
-		regular_collision_shape.disabled = true
+<<<<<<< Updated upstream
+	if(Stamina.stamina >= 40):
+		Stamina.stamina -= 40
 		dir = player.last_direction
 		player.velocity = dir * ACCELERATION
-		var tween :Tween = create_tween()
-		basic_camera_pos = camera.position
-		tween.tween_property(camera, "position", Vector3(basic_camera_pos.x, basic_camera_pos.y - 1.5, basic_camera_pos.z), 0.1)
+		player.set_crouch(true)
+=======
+	player.set_crouch(true)
+	dir = player.last_direction
+	player.velocity = dir * ACCELERATION
+>>>>>>> Stashed changes
 
 func exit():
-	regular_collision_shape.disabled = false
-	crouch_collision_shape.disabled = true
-	var tween :Tween = create_tween()
-	tween.tween_property(camera, "position", basic_camera_pos, 0.1)
+	player.set_crouch(false)
 
 func physics_update(delta:float):
 	player.apply_gravity(delta)

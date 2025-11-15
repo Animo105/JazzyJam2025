@@ -3,9 +3,34 @@ class_name Player
 
 @onready var neck: Node3D = $neck
 @onready var camera: Camera3D = $neck/camera
+@onready var regular_collision_shape: CollisionShape3D = $regularCollisionShape
+@onready var crouch_collision_shape: CollisionShape3D = $crouchCollisionShape
 
+const DEFAUT_CAM_POS : Vector3 = Vector3(0, 1.5, 0)
+const CROUCH_CAM_POS : Vector3 = Vector3(0, 0.4, 0)
 
-const JUMP_VELOCITY = 4.5
+const JUMP_VELOCITY = 5.5
+
+var tween : Tween
+
+func set_crouch(enable : bool):
+	print("set crouch", enable)
+	if (enable):
+		crouch_collision_shape.disabled = false
+		regular_collision_shape.disabled = true
+		if tween:
+			tween.kill()
+		tween = create_tween()
+		tween.tween_property(camera, "position", CROUCH_CAM_POS, 0.1)
+		
+	else:
+		crouch_collision_shape.disabled = true
+		regular_collision_shape.disabled = false
+		if tween:
+			tween.kill()
+		tween = create_tween()
+		tween.tween_property(camera, "position", DEFAUT_CAM_POS, 0.1)
+
 
 @onready var fsm: PlayerFSM = $PlayerFSM
 

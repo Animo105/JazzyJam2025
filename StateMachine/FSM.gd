@@ -1,6 +1,8 @@
 extends Node
 class_name FSM
 
+signal on_state_change(String)
+
 var states : Dictionary[String, State] = {}
 var current_state : State
 var current_state_key : String
@@ -32,5 +34,6 @@ func change_state(state_name : String)->void:
 		if current_state:
 			current_state.exit()
 		current_state = states[state_name]
+		on_state_change.emit(state_name)
 		current_state.enter()
 		current_state_key = state_name

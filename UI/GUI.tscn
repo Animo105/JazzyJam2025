@@ -1,12 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://dk67l8wu2pmwk"]
+[gd_scene load_steps=5 format=3 uid="uid://dk67l8wu2pmwk"]
 
 [ext_resource type="Texture2D" uid="uid://dvf6g2ft4bmgx" path="res://Assets/battery-sheet.png" id="1_644iy"]
 [ext_resource type="Script" uid="uid://b0l4lusxfjoeh" path="res://UI/power.gd" id="2_yki11"]
 [ext_resource type="Script" uid="uid://c5aeyywnx30uh" path="res://UI/sprintbar.gd" id="3_dl5f7"]
+[ext_resource type="Script" uid="uid://ccpl72mye4mo4" path="res://UI/window.gd" id="4_n3xue"]
 
 [node name="Gui" type="CanvasLayer"]
 
-[node name="Control" type="Control" parent="."]
+[node name="Constant UI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,7 +15,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="power" type="Sprite2D" parent="Control"]
+[node name="power" type="Sprite2D" parent="Constant UI"]
 position = Vector2(47.75, 42.323708)
 scale = Vector2(0.14739886, 0.14739886)
 texture = ExtResource("1_644iy")
@@ -22,7 +23,7 @@ hframes = 5
 frame = 4
 script = ExtResource("2_yki11")
 
-[node name="sprintbar" type="ProgressBar" parent="Control"]
+[node name="sprintbar" type="ProgressBar" parent="Constant UI"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -38,3 +39,23 @@ grow_vertical = 0
 value = 50.0
 show_percentage = false
 script = ExtResource("3_dl5f7")
+
+[node name="Pop Ups" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="window" type="Label" parent="Pop Ups"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -25.0
+offset_top = 103.0
+offset_right = 25.0
+offset_bottom = 147.0
+grow_horizontal = 2
+script = ExtResource("4_n3xue")

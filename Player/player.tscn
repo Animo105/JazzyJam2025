@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://hdaj4nvpsw5w" path="res://Player/PlayerStates/RunState.gd" id="7_od3ui"]
 [ext_resource type="PackedScene" uid="uid://dk67l8wu2pmwk" path="res://UI/GUI.tscn" id="7_vtle1"]
 [ext_resource type="Texture2D" uid="uid://baych4ewo4ra2" path="res://Assets/spotlight.png" id="8_00tjw"]
+[ext_resource type="Script" uid="uid://da10f7kbhlys8" path="res://Player/spot_light_3d.gd" id="9_x3vf3"]
 [ext_resource type="Script" uid="uid://cnotwt57yrto2" path="res://Player/PlayerStates/JumpState.gd" id="8_apopc"]
 [ext_resource type="Script" path="res://Player/spot_light_3d.gd" id="9_x3vf3"]
 

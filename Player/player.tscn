@@ -11,7 +11,7 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3v3li"]
 radius = 0.7
-height = 4.0
+height = 3.0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k53q1"]
 radius = 0.7
@@ -35,14 +35,14 @@ metadata/_custom_type_script = "uid://bsae5ihuv3a3v"
 script = ExtResource("5_k53q1")
 metadata/_custom_type_script = "uid://da2ohmmfmsfw0"
 
-[node name="crouch" type="Node" parent="PlayerFSM"]
+[node name="Crouch" type="Node" parent="PlayerFSM"]
 script = ExtResource("6_fhl08")
 
 [node name="Run" type="Node" parent="PlayerFSM"]
 script = ExtResource("7_od3ui")
 
 [node name="regularCollisionShape" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 shape = SubResource("CapsuleShape3D_3v3li")
 
 [node name="crouchCollisionShape" type="CollisionShape3D" parent="."]
@@ -53,6 +53,6 @@ shape = SubResource("CapsuleShape3D_k53q1")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="camera" type="Camera3D" parent="neck"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
 
 [node name="Gui" parent="." instance=ExtResource("7_vtle1")]

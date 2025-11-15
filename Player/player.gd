@@ -6,7 +6,7 @@ class_name Player
 @onready var regular_collision_shape: CollisionShape3D = $regularCollisionShape
 @onready var crouch_collision_shape: CollisionShape3D = $crouchCollisionShape
 
-const DEFAUT_CAM_POS : Vector3 = Vector3(0, 1.5, 0)
+const DEFAUT_CAM_POS : Vector3 = Vector3(0, 1.2, 0)
 const CROUCH_CAM_POS : Vector3 = Vector3(0, 0.4, 0)
 
 const JUMP_VELOCITY = 5.5
@@ -43,7 +43,7 @@ func _physics_process(delta: float) -> void:
 func jump()->void:
 	velocity.y = JUMP_VELOCITY
 
-func move_player(speed, acceleration, deceleration)->void:
+func move_player(speed : float, acceleration : float, deceleration : float)->void:
 	var input_dir := Input.get_vector("left", "right", "forward", "back")
 	var direction := (neck.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:

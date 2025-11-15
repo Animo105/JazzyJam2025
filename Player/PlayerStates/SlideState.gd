@@ -15,13 +15,13 @@ func enter():
 		player.velocity = dir * ACCELERATION
 		player.set_crouch(true)
 
-
 func exit():
 	player.set_crouch(false)
 
 func physics_update(delta:float):
+	print(player.velocity)
 	player.apply_gravity(delta)
 	player.velocity.x = move_toward(player.velocity.x, 0, DECELERATION * delta)
 	player.velocity.z = move_toward(player.velocity.z, 0, DECELERATION * delta)
-	if Input.is_action_just_released('slide'):
-		fsm.change_state('ground')
+	if player.velocity.x == 0 && player.velocity.z == 0:
+		fsm.change_state('crouch')

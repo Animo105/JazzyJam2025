@@ -16,7 +16,7 @@ func enter():
 	player.velocity = dir * ACCELERATION
 	var tween :Tween = create_tween()
 	basic_camera_pos = camera.position
-	tween.tween_property(camera, "position", Vector3(basic_camera_pos.x, basic_camera_pos.y - 0.5, basic_camera_pos.z), 0.1)
+	tween.tween_property(camera, "position", Vector3(basic_camera_pos.x, basic_camera_pos.y - 1.5, basic_camera_pos.z), 0.1)
 
 func exit():
 	regular_collision_shape.disabled = false

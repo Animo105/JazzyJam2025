@@ -1,15 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://cvxo4w6ov724i"]
+[gd_scene load_steps=9 format=3 uid="uid://cvxo4w6ov724i"]
 
 [ext_resource type="Script" uid="uid://ca7ll4bopkqpv" path="res://Player/player.gd" id="1_l8h54"]
 [ext_resource type="Script" uid="uid://t5xg36eqq4n0" path="res://Player/PlayerStates/PlayerFSM.gd" id="2_4ntmi"]
 [ext_resource type="Script" uid="uid://bf5cw8x5fe2vb" path="res://Player/PlayerStates/GroundedState.gd" id="3_btcbx"]
 [ext_resource type="Script" uid="uid://bsae5ihuv3a3v" path="res://Player/PlayerStates/AirState.gd" id="4_gwnis"]
 [ext_resource type="Script" uid="uid://da2ohmmfmsfw0" path="res://Player/PlayerStates/SlideState.gd" id="5_k53q1"]
+[ext_resource type="Script" uid="uid://bo0fqn3s5hg77" path="res://Player/PlayerStates/CrouchState.gd" id="6_fhl08"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3v3li"]
+radius = 0.7
+height = 4.0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k53q1"]
-height = 1.0
+radius = 0.7
 
 [node name="CharacterBody2D" type="CharacterBody3D"]
 script = ExtResource("1_l8h54")
@@ -30,15 +33,20 @@ metadata/_custom_type_script = "uid://bsae5ihuv3a3v"
 script = ExtResource("5_k53q1")
 metadata/_custom_type_script = "uid://da2ohmmfmsfw0"
 
+[node name="crouch" type="Node" parent="PlayerFSM"]
+script = ExtResource("6_fhl08")
+metadata/_custom_type_script = "uid://bo0fqn3s5hg77"
+
 [node name="regularCollisionShape" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 shape = SubResource("CapsuleShape3D_3v3li")
 
 [node name="crouchCollisionShape" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_k53q1")
 
 [node name="neck" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="camera" type="Camera3D" parent="neck"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6114349, 0)

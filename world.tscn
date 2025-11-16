@@ -1,4 +1,4 @@
-[gd_scene load_steps=114 format=4 uid="uid://j6rvkritji5c"]
+[gd_scene load_steps=118 format=4 uid="uid://b7a8ruydxasfd"]
 
 [ext_resource type="Script" uid="uid://1kwwu85ys8il" path="res://world.gd" id="1_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://cvxo4w6ov724i" path="res://Player/player.tscn" id="1_f3sb7"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://bgbuxi00r4mfe" path="res://Assets/Models/Map final/map_finale_JazzyTonicTexture.png" id="14_qktwf"]
 [ext_resource type="Texture2D" uid="uid://hu0rdl4cy0in" path="res://Assets/Models/Map final/map_finale_machin.png" id="15_bh8nc"]
 [ext_resource type="Texture2D" uid="uid://cddvid1osvtuf" path="res://Assets/Models/Map final/map_finale_seamless-texture-soccer-ball-stars-football-background-blue-whi.webp" id="16_jjr1n"]
+[ext_resource type="PackedScene" uid="uid://vregbf7j4k0v" path="res://Collectible/plush vache.tscn" id="21_bc84e"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gv5m4"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -46,6 +47,7 @@ cell_size = 0.1
 cell_height = 0.05
 border_size = 0.8
 agent_height = 0.9
+agent_radius = 0.6
 agent_max_climb = 0.5
 agent_max_slope = 60.0
 
@@ -1706,7 +1708,16 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dwbse"]
-size = Vector3(1.823307, 1.6801758, 0.8809911)
+size = Vector3(1.823307, 1.6801758, 1.223496)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bc84e"]
+size = Vector3(6.1862793, 2.4873047, 0.34014893)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wukud"]
+size = Vector3(6.2058105, 2.5744934, 0.33795166)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_il2jm"]
+size = Vector3(33.17392, 0.8010254, 49.97461)
 
 [node name="world" type="Node3D"]
 script = ExtResource("1_aqk2v")
@@ -1757,7 +1768,6 @@ shape = SubResource("ConcavePolygonShape3D_vo5x1")
 
 [node name="Celing" type="MeshInstance3D" parent="NavigationRegion3D/map_finale"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-visible = false
 mesh = SubResource("ArrayMesh_ioxet")
 skeleton = NodePath("")
 
@@ -2053,11 +2063,11 @@ player = NodePath("../Player")
 patrol_points = [NodePath("../PatrolPoints/Pos1"), NodePath("../PatrolPoints/Pos2"), NodePath("../PatrolPoints/Pos4"), NodePath("../PatrolPoints/Pos5"), NodePath("../PatrolPoints/Pos6"), NodePath("../PatrolPoints/Pos7"), NodePath("../PatrolPoints/Pos8")]
 
 [node name="Plush Elephant" parent="." instance=ExtResource("5_dwbse")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.558775, 0.5697303, 1.5560102)
+transform = Transform3D(-0.47631496, 0, 0.8792747, 0, 1, 0, -0.8792747, 0, -0.47631496, 30.877405, 0.14504385, -26.90339)
 id = 1
 
 [node name="Plush Nounours" parent="." instance=ExtResource("6_pkg7o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.294394, 0.41920614, 3.3340292)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.969958, 0.115893185, -28.031496)
 id = 2
 
 [node name="Tutoriel light 1" type="OmniLight3D" parent="."]
@@ -2080,21 +2090,21 @@ shape = SubResource("BoxShape3D_dwbse")
 collision_mask = 2
 
 [node name="triggerBox" type="CollisionShape3D" parent="Tutoriel message2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8858957, 13.294479, 8.909515)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.425779, 1.4238052, 2.9006393)
 shape = SubResource("BoxShape3D_dwbse")
 
 [node name="Tutoriel message3" type="Area3D" parent="."]
 collision_mask = 2
 
 [node name="triggerBox" type="CollisionShape3D" parent="Tutoriel message3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6159828, 13.294479, 7.2047977)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.050692, 0.6528497, 1.0210432)
 shape = SubResource("BoxShape3D_dwbse")
 
 [node name="Tutoriel message4" type="Area3D" parent="."]
 collision_mask = 2
 
 [node name="triggerBox" type="CollisionShape3D" parent="Tutoriel message4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6159828, 13.294479, 5.9604406)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.195482, 0.8330121, -0.3518306)
 shape = SubResource("BoxShape3D_dwbse")
 
 [node name="Ball Pit" parent="." instance=ExtResource("6_dwbse")]
@@ -2111,6 +2121,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.339752, 0.3902111, -30.069
 
 [node name="Ball Pit5" parent="." instance=ExtResource("6_dwbse")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.54455, 0.3902111, -34.587257)
+
+[node name="plush" parent="." instance=ExtResource("21_bc84e")]
+transform = Transform3D(-0.7348554, 0, 0.67822385, 0, 1, 0, -0.67822385, 0, -0.7348554, 10.666809, 0.06652099, -24.632793)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.970552, 0.74365234, -26.01928)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_bc84e")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.984978, 0.7872467, -31.91032)
+shape = SubResource("BoxShape3D_wukud")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.08696, 2.3007245, -14.360352)
+shape = SubResource("BoxShape3D_il2jm")
 
 [connection signal="body_entered" from="Tutoriel message" to="." method="_on_tutoriel_message_body_entered"]
 [connection signal="body_exited" from="Tutoriel message" to="." method="_on_tutoriel_message_body_exited"]

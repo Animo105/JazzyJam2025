@@ -16,5 +16,7 @@ func _ready() -> void:
 func collect(_id : int):
 	nbPlushCollected += 1
 	if nbPlushCollected >= WIN_AMOUNT_PLUSHIES:
+		MusicPanel.clear_music()
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		MusicPanel.play_you_win()
 		get_tree().call_deferred("change_scene_to_file",  "res://Menus/Start menu.tscn")

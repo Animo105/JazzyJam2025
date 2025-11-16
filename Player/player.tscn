@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cvxo4w6ov724i"]
+[gd_scene load_steps=20 format=3 uid="uid://cvxo4w6ov724i"]
 
 [ext_resource type="Script" uid="uid://ca7ll4bopkqpv" path="res://Player/player.gd" id="1_l8h54"]
 [ext_resource type="Script" uid="uid://t5xg36eqq4n0" path="res://Player/PlayerStates/PlayerFSM.gd" id="2_4ntmi"]
@@ -10,9 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://dk67l8wu2pmwk" path="res://UI/GUI.tscn" id="7_vtle1"]
 [ext_resource type="Texture2D" uid="uid://baych4ewo4ra2" path="res://Assets/png/spotlight.png" id="8_00tjw"]
 [ext_resource type="Script" uid="uid://cnotwt57yrto2" path="res://Player/PlayerStates/JumpState.gd" id="8_apopc"]
+[ext_resource type="Script" uid="uid://b0xlvi5jmi824" path="res://Player/PlayerStates/WindingFlashlight.gd" id="9_p5o4e"]
 [ext_resource type="Script" uid="uid://da10f7kbhlys8" path="res://Player/spot_light_3d.gd" id="9_x3vf3"]
 [ext_resource type="PackedScene" uid="uid://bb0tpgsd3j0mg" path="res://Player/Screen Effects/shader_canvas.tscn" id="11_5htga"]
-[ext_resource type="AudioStream" uid="uid://cwxvgeekc12qd" path="res://Assets/Musics/walk.mp3" id="13_p5o4e"]
+[ext_resource type="AudioStream" uid="uid://cbhxudjulu83s" path="res://Assets/Musics/Flashlight Button Sound Effect 4.mp3" id="12_dkpta"]
+[ext_resource type="AudioStream" uid="uid://dvqa0b22qt6kv" path="res://Assets/Musics/footstep02.ogg" id="13_p5o4e"]
 
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_x3vf3"]
 
@@ -70,6 +72,10 @@ script = ExtResource("7_od3ui")
 script = ExtResource("8_apopc")
 metadata/_custom_type_script = "uid://cnotwt57yrto2"
 
+[node name="windingFlashlight" type="Node" parent="PlayerFSM"]
+script = ExtResource("9_p5o4e")
+metadata/_custom_type_script = "uid://b0xlvi5jmi824"
+
 [node name="regularCollisionShape" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 shape = SubResource("CapsuleShape3D_3v3li")
@@ -95,6 +101,9 @@ spot_range = 20.444044
 spot_angle = 46.75568
 script = ExtResource("9_x3vf3")
 
+[node name="clic" type="AudioStreamPlayer" parent="neck/camera/flashlight"]
+stream = ExtResource("12_dkpta")
+
 [node name="CameraCanvas" parent="neck/camera" instance=ExtResource("11_5htga")]
 layer = 2
 
@@ -117,3 +126,7 @@ shape = SubResource("BoxShape3D_apopc")
 
 [node name="steps" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_p5o4e")
+
+[node name="RayCast3D2" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1282833, 0)
+target_position = Vector3(0, 1, 0)

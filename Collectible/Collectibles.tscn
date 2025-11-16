@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcj5as4aeafby"]
+
+[ext_resource type="Script" uid="uid://bvjuloljdbu8c" path="res://Collectible/plushie.gd" id="1_tfstf"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wivcb"]
+
+[node name="Collectibles" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5287173, 0)
+mesh = SubResource("BoxMesh_wivcb")
+script = ExtResource("1_tfstf")

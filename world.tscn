@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://yme44nuryh7x"]
+[gd_scene load_steps=9 format=3 uid="uid://j6rvkritji5c"]
 
 [ext_resource type="PackedScene" uid="uid://cvxo4w6ov724i" path="res://Player/player.tscn" id="1_f3sb7"]
-[ext_resource type="PackedScene" uid="uid://861by1lecvay" path="res://ennemi/enemy.tscn" id="3_aqk2v"]
-[ext_resource type="PackedScene" uid="uid://dwh13o6xepvou" path="res://map.tscn" id="3_tlwt5"]
+[ext_resource type="PackedScene" path="res://ennemi/enemy.tscn" id="3_aqk2v"]
+[ext_resource type="PackedScene" path="res://map.tscn" id="3_tlwt5"]
+[ext_resource type="PackedScene" uid="uid://bcj5as4aeafby" path="res://Collectible/Collectibles.tscn" id="4_aqk2v"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gv5m4"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -59,3 +60,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.421284, -3.4086056, 47.93
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.188118, 13.332756, 52.82554)
 player = NodePath("../Player")
 patrol_points = [NodePath("../PatrolPoints/Pos1"), NodePath("../PatrolPoints/Pos2"), NodePath("../PatrolPoints/Pos4")]
+
+[node name="Collectibles" parent="." instance=ExtResource("4_aqk2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.363663, 13.28644, 130.85457)

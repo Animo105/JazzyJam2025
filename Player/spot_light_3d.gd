@@ -1,7 +1,7 @@
 extends SpotLight3D
 
 var is_flashlight_on : bool = false
-
+@onready var clic: AudioStreamPlayer = $clic
 
 func _ready() -> void:
 	hide()
@@ -22,6 +22,7 @@ func _physics_process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("flashlight"):
 		if Power.power > 0:
+			clic.play(0.5)
 			if is_flashlight_on == false:
 				show()
 				is_flashlight_on = true

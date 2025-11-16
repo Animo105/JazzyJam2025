@@ -9,6 +9,7 @@ class_name Player
 @onready var camera_effects: CameraEffetcs = $neck/camera/CameraCanvas
 @onready var steps: AudioStreamPlayer = $steps
 @onready var fsm: PlayerFSM = $PlayerFSM
+@onready var ray_cast_3d_2: RayCast3D = $RayCast3D2
 
 const DEFAUT_CAM_POS : Vector3 = Vector3(0, 1.2, 0)
 const CROUCH_CAM_POS : Vector3 = Vector3(0, 0.4, 0)
@@ -29,6 +30,7 @@ func _process(delta: float) -> void:
 	fsm.update(delta)
 
 func _physics_process(delta: float) -> void:
+
 	if fov_tween:
 		fov_tween.kill()
 	fov_tween = create_tween()
@@ -42,6 +44,11 @@ func is_moving()->bool:
 func play_step_sound():
 	steps.pitch_scale = randf() * 0.2 + 0.9
 	steps.play()
+
+func _on_timeout():
+	if Stamina.stamina > 0:
+		Power.recharging.emit(true)
+		Stamina.stamina -= 1
 
 func set_crouch(enable : bool):
 	if (enable):
@@ -84,6 +91,12 @@ func move_player(speed : float, acceleration : float, deceleration : float)->voi
 	last_direction = direction
 
 func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("recharging"):
+		if Power.charging:
+			Power.recharging.emit(false)
+		elif !Power.charging:
+			Power.recharging.emit(true)
+	
 	if event.is_action_pressed("esc"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	

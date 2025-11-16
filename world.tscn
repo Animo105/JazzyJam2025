@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://j6rvkritji5c"]
 
-[ext_resource type="Script" uid="uid://1kwwu85ys8il" path="res://world.gd" id="1_aqk2v"]
+[ext_resource type="Script" path="res://world.gd" id="1_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://cvxo4w6ov724i" path="res://Player/player.tscn" id="1_f3sb7"]
 [ext_resource type="PackedScene" uid="uid://duvieshugdb7g" path="res://Assets/Models/Map Antoine/Map.glb" id="3_036b0"]
-[ext_resource type="PackedScene" uid="uid://c7m48tk4n44m" path="res://ennemi/enemy.tscn" id="3_aqk2v"]
-[ext_resource type="PackedScene" uid="uid://bcj5as4aeafby" path="res://Collectible/Collectibles.tscn" id="4_aqk2v"]
+[ext_resource type="PackedScene" path="res://ennemi/enemy.tscn" id="3_aqk2v"]
+[ext_resource type="PackedScene" uid="uid://bcj5as4aeafby" path="res://Collectible/plushie.tscn" id="4_aqk2v"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gv5m4"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -30,6 +30,7 @@ geometry_parsed_geometry_type = 1
 cell_size = 0.1
 cell_height = 0.05
 border_size = 0.9
+agent_height = 2.0
 agent_radius = 0.7
 agent_max_climb = 0.5
 agent_max_slope = 60.0
@@ -79,4 +80,4 @@ player = NodePath("../Player")
 patrol_points = [NodePath("../PatrolPoints/Pos1"), NodePath("../PatrolPoints/Pos2"), NodePath("../PatrolPoints/Pos4"), NodePath("../PatrolPoints/Pos5"), NodePath("../PatrolPoints/Pos6"), NodePath("../PatrolPoints/Pos7"), NodePath("../PatrolPoints/Pos8")]
 
 [node name="plushie" parent="." instance=ExtResource("4_aqk2v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.95066, 14.767035, 137.08888)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.168529, 12.514498, 12.6004925)

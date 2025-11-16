@@ -1,4 +1,6 @@
-extends Node
+extends Area3D
+class_name plush
+
 
 @onready var mesh_instance_3d: MeshInstance3D = $MeshInstance3D
 @onready var area_3d: Area3D = $Area3D

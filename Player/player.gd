@@ -9,11 +9,15 @@ class_name Player
 @onready var camera_effects: CameraEffetcs = $neck/camera/CameraCanvas
 @onready var steps: AudioStreamPlayer = $steps
 @onready var fsm: PlayerFSM = $PlayerFSM
-@onready var range: RayCast3D = $range
+@onready var range: RayCast3D = $neck/camera/range
 @onready var head_ray: RayCast3D = $headRay
 
 const DEFAUT_CAM_POS : Vector3 = Vector3(0, 0.9, 0)
 const CROUCH_CAM_POS : Vector3 = Vector3(0, 0.4, 0)
+
+const DEFAULT_SPEED : float = 2
+const DEFAULT_ACCELERATION : float = 3.0
+const DEFAULT_DECELERATION : float = 4.0
 
 const JUMP_VELOCITY = 4
 
@@ -30,6 +34,7 @@ func _ready() -> void:
 	set_crouch(false)
 
 func _physics_process(delta: float) -> void:
+	check_range()
 
 	if fov_tween:
 		fov_tween.kill()
@@ -108,6 +113,9 @@ func apply_gravity(delta : float)->void:
 	velocity += get_gravity() * delta
 
 func check_range():
-	#if range.is_colliding() && range.get_collider() == 
-		#if is interactible
-	pass
+	if range.is_colliding() && range.get_collider() is plush:
+		print("PLUSH IN VIEW")
+
+func update_velocity():
+	velocity.x = move_toward(velocity.x, 0, DEFAULT_DECELERATION)
+	velocity.z = move_toward(velocity.z, 0, DEFAULT_DECELERATION)

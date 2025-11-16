@@ -2,6 +2,7 @@ extends PlayerState
 class_name windingFlashlight
 
 func physics_update(_delta:float):
+	player.update_velocity()
 	transition()
 
 func enter():

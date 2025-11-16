@@ -40,7 +40,7 @@ func _on_timer_timeout():
 	if power == 0:
 		timer.stop()
 	else:
-		power -= 20
+		power -= 5
 
 func _on_recharge(recharginOn : bool):
 	if recharginOn:

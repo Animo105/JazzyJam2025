@@ -1,7 +1,7 @@
 extends PlayerState
 class_name windingFlashlight
 
-func physics_update(delta:float):
+func physics_update(_delta:float):
 	Power.recharging.emit(true)
 	transition()
 

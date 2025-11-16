@@ -1,6 +1,7 @@
 extends Node
 
 signal on_stamina_update(int)
+@warning_ignore("unused_signal")
 signal stamina_bar_color()
 
 var stamina : int:
@@ -27,7 +28,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func _on_timerStaminaUse_timeout():

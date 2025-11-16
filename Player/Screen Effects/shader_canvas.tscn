@@ -1,18 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://bb0tpgsd3j0mg"]
+[gd_scene load_steps=5 format=3 uid="uid://bb0tpgsd3j0mg"]
 
 [ext_resource type="Script" uid="uid://dssrdf8st40nc" path="res://Player/Screen Effects/shader_canvas.gd" id="1_j312h"]
 [ext_resource type="Texture2D" uid="uid://co2m63onlpuw" path="res://Assets/png/balls.png" id="2_ywfvi"]
+[ext_resource type="Shader" uid="uid://dvk77toovalv5" path="res://Player/Screen Effects/shaders/posterization.gdshader" id="3_xfkqg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_en7xo"]
+shader = ExtResource("3_xfkqg")
+shader_parameter/levels = 25
 
 [node name="CameraCanvas" type="CanvasLayer"]
 script = ExtResource("1_j312h")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(1, 1, 1, 0)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(0.25565878, 0.25565878, 0.25565878, 1)
@@ -23,3 +20,11 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_ywfvi")
 expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_en7xo")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

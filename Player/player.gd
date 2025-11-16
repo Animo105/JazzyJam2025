@@ -11,10 +11,10 @@ class_name Player
 @onready var fsm: PlayerFSM = $PlayerFSM
 @onready var ray_cast_3d_2: RayCast3D = $RayCast3D2
 
-const DEFAUT_CAM_POS : Vector3 = Vector3(0, 1.2, 0)
+const DEFAUT_CAM_POS : Vector3 = Vector3(0, 0.9, 0)
 const CROUCH_CAM_POS : Vector3 = Vector3(0, 0.4, 0)
 
-const JUMP_VELOCITY = 6
+const JUMP_VELOCITY = 4
 
 var basic_fov = 75
 var is_hiding : bool = false
@@ -25,6 +25,8 @@ var last_direction : Vector3
 
 func _ready() -> void:
 	camera.fov = basic_fov
+	camera.position = DEFAUT_CAM_POS
+	set_crouch(false)
 
 func _process(delta: float) -> void:
 	fsm.update(delta)
@@ -69,9 +71,9 @@ func set_crouch(enable : bool):
 
 func get_height()->float:
 	if regular_collision_shape.disabled:
-		return 2.0
+		return 0.5
 	else:
-		return 3.0
+		return 1.0
 
 func get_greater_velocity()->float:
 	return max(abs(velocity.x), abs(velocity.z))

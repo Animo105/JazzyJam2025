@@ -14,35 +14,39 @@
 [ext_resource type="Script" uid="uid://da10f7kbhlys8" path="res://Player/spot_light_3d.gd" id="9_x3vf3"]
 [ext_resource type="PackedScene" uid="uid://bb0tpgsd3j0mg" path="res://Player/Screen Effects/shader_canvas.tscn" id="11_5htga"]
 [ext_resource type="AudioStream" uid="uid://cbhxudjulu83s" path="res://Assets/Musics/Flashlight Button Sound Effect 4.mp3" id="12_dkpta"]
-[ext_resource type="AudioStream" uid="uid://dvqa0b22qt6kv" path="res://Assets/Musics/footstep02.ogg" id="13_p5o4e"]
+[ext_resource type="AudioStream" uid="uid://cwxvgeekc12qd" path="res://Assets/Musics/walk.mp3" id="13_p5o4e"]
 
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_x3vf3"]
+length = 0.25
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3v3li"]
-radius = 0.7
-height = 3.0
+radius = 0.15
+height = 1.0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k53q1"]
-radius = 0.7
+radius = 0.15
+height = 0.5
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_apopc"]
-size = Vector3(0.5, 1, 0.5)
+size = Vector3(0.1, 0.2, 0.1)
 
 [node name="Player" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_l8h54")
 
 [node name="stepup" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, -0.99999994, 0, 0.99999994, -4.3711385e-08, 0.6, 1, -0.75)
+transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, -0.99999994, 0, 0.99999994, -4.3711385e-08, 0.2, 0.25, -0.2)
 shape = SubResource("SeparationRayShape3D_x3vf3")
 disabled = true
 
 [node name="stepup2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, -0.99999994, 0, 0.99999994, -4.3711385e-08, -0.6, 1, -0.75)
+transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, -0.99999994, 0, 0.99999994, -4.3711385e-08, -0.2, 0.25, -0.2)
 shape = SubResource("SeparationRayShape3D_x3vf3")
 disabled = true
 
 [node name="stepup3" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, -0.99999994, 0, 0.99999994, -4.3711385e-08, 0, 1, -0.75)
+transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, -0.99999994, 0, 0.99999994, -4.3711385e-08, 0, 0.25, -0.2)
 shape = SubResource("SeparationRayShape3D_x3vf3")
 disabled = true
 
@@ -74,24 +78,22 @@ metadata/_custom_type_script = "uid://cnotwt57yrto2"
 
 [node name="windingFlashlight" type="Node" parent="PlayerFSM"]
 script = ExtResource("9_p5o4e")
-metadata/_custom_type_script = "uid://b0xlvi5jmi824"
 
 [node name="regularCollisionShape" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("CapsuleShape3D_3v3li")
 
 [node name="crouchCollisionShape" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 shape = SubResource("CapsuleShape3D_k53q1")
 
 [node name="neck" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="camera" type="Camera3D" parent="neck"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 
 [node name="flashlight" type="SpotLight3D" parent="neck/camera"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.65221643, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0)
 light_color = Color(1, 1, 0.49019608, 1)
 light_energy = 3.0
 light_indirect_energy = 2.0
@@ -113,20 +115,17 @@ omni_range = 3.8831172
 
 [node name="Gui" parent="." instance=ExtResource("7_vtle1")]
 
-[node name="RayCast3D" type="RayCast3D" parent="."]
-target_position = Vector3(0, -0.6, 0)
-
 [node name="Detection" type="Area3D" parent="."]
 collision_layer = 0
 collision_mask = 8
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Detection"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27867752, 0)
 shape = SubResource("BoxShape3D_apopc")
 
 [node name="steps" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_p5o4e")
 
 [node name="RayCast3D2" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1282833, 0)
-target_position = Vector3(0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5478367, 0)
+target_position = Vector3(0, 0.5, 0)

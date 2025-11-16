@@ -6,7 +6,7 @@ var is_flashlight_on : bool = false
 func _ready() -> void:
 	hide()
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if (Power.power <= 0):
 		var rng = RandomNumberGenerator.new()
 		if !is_flashlight_on == false:

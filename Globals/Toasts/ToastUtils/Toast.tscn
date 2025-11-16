@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://dekrojj1kheri"]
+
+[ext_resource type="Script" uid="uid://dr8g2cbqb1dt2" path="res://Globals/Toasts/ToastUtils/toast.gd" id="1_mrdnh"]
+
+[node name="Toast" type="Panel"]
+anchors_preset = -1
+anchor_right = 0.39100003
+anchor_bottom = 0.24200001
+offset_right = 0.56796265
+offset_bottom = 0.18399048
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mrdnh")
+
+[node name="Header" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 35.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 25
+text = "Header"
+horizontal_alignment = 1
+text_overrun_behavior = 2
+
+[node name="Message" type="Label" parent="Header"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 4.644
+offset_left = 1.0
+offset_right = -1.0
+offset_bottom = -5.5400085
+grow_horizontal = 2
+grow_vertical = 0
+text = "Message"
+horizontal_alignment = 1
+autowrap_mode = 2
+text_overrun_behavior = 2

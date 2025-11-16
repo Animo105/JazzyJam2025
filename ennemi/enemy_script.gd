@@ -3,15 +3,16 @@ extends Node3D
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent
 @onready var ray_cast: RayCast3D = $RayCast
 @onready var chase_timer: Timer = $ChaseTimer
+@onready var animation_player: AnimationPlayer = $JazzyTonic/AnimationPlayer
 
 enum State { PATROL, CHASE }
 
 @export var player: Player
 @export var patrol_points: Array[Marker3D]
-@export var patrol_speed: float = 3.0
-@export var chase_speed: float = 5.0
-@export var fov_deg: float = 150.0
-@export var nearby_radius: float = 8.0
+@export var patrol_speed: float = 1.5
+@export var chase_speed: float = 4.0
+@export var fov_deg: float = 120.0
+@export var nearby_radius: float = 4.0
 @export var ray_cast_sample: int = 5
 @export var turning_speed: float = 8
 
@@ -24,6 +25,7 @@ var hit_height : float
 func _ready():
 	if patrol_points.size() > 0:
 		nav_agent.target_position = patrol_points[0].global_position
+	animation_player.play("Walk")
 
 
 func _physics_process(delta):
@@ -52,12 +54,14 @@ func enter_chase_state() -> void:
 	state = State.CHASE
 	speed = chase_speed
 	chase_timer.start()
+	animation_player.speed_scale = 4
 
 
 func enter_patrol_state() -> void:
 	state = State.PATROL
 	speed = patrol_speed
 	nav_agent.target_position = patrol_points[patrol_index].global_position
+	animation_player.speed_scale = 2
 
 
 func patrol_behavior() -> void:
@@ -101,3 +105,7 @@ func line_of_sight() -> float:
 			return true
 
 	return false
+	
+
+func _on_kill_zone_body_entered(_body: Node3D) -> void:
+	print("dead")

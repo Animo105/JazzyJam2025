@@ -20,6 +20,7 @@ config/icon="res://Assets/png/icon.svg"
 Global="*res://Globals/global.gd"
 Power="*res://Globals/power.gd"
 Stamina="*res://Globals/stamina.gd"
+ToastManager="*res://Globals/Toasts/ToastUtils/ToastManager.gd"
 
 [display]
 
@@ -96,4 +97,6 @@ interract={
 [layer_names]
 
 3d_physics/layer_1="World"
+3d_physics/layer_2="Player"
+3d_physics/layer_3="See Throught"
 3d_physics/layer_4="Hiding zones"

@@ -33,6 +33,7 @@ folder_colors={
 "res://Assets/": "yellow",
 "res://Modules/": "blue",
 "res://Player/": "green",
+"res://Win Scene/": "purple",
 "res://ennemi/": "red"
 }
 

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c5c4vbuemm42m"
+path="res://.godot/imported/GameJazz - Chase_Loop.mp3-f5b115f724095c984e8d93847eb84bf3.mp3str"
+
+[deps]
+
+source_file="res://Assets/Musics/GameJazz - Chase_Loop.mp3"
+dest_files=["res://.godot/imported/GameJazz - Chase_Loop.mp3-f5b115f724095c984e8d93847eb84bf3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

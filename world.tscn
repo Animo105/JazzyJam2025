@@ -50,7 +50,7 @@ navigation_mesh = SubResource("NavigationMesh_fj7yv")
 [node name="Map" parent="NavigationRegion3D" instance=ExtResource("3_036b0")]
 
 [node name="PatrolPoints" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.86288, 31.888523, 46.63871)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.911118, 11.999025, 6.0823507)
 
 [node name="Pos1" type="Marker3D" parent="PatrolPoints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0.45, -37)

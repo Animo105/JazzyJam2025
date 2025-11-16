@@ -1,8 +1,8 @@
 extends Node
 
-signal on_power_update(int)
-signal flashlight_on(bool)
-signal recharging(bool)
+signal on_power_update(value : int)
+signal flashlight_on(enable : bool)
+signal recharging(enable : bool)
 
 var power : int:
 	set(value):

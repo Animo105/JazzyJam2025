@@ -24,6 +24,7 @@ func _physics_process(_delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("flashlight"):
 		if Power.power > 0:
+			Global.message.emit("")
 			clic.play(0.5)
 			if is_flashlight_on == false:
 				show()

@@ -1,16 +1,14 @@
-extends Area3D
+extends StaticBody3D
 class_name plush
 
-
-@onready var mesh_instance_3d: MeshInstance3D = $MeshInstance3D
-@onready var area_3d: Area3D = $Area3D
-
-var pickup : bool = false
+@export var id : int
 
 func _physics_process(_delta: float) -> void:
 	pass
 
-func _on_area_3d_area_entered(area: Area3D) -> void:
-	mesh_instance_3d.visible = false
-	pickup = true
-	print(pickup)
+func _ready() -> void:
+	Global.plushCollected.connect(_on_collect)
+
+func _on_collect(_id : int):
+	if id == _id:
+		queue_free()

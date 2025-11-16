@@ -87,6 +87,7 @@ patrol_points = [NodePath("../PatrolPoints/Pos1"), NodePath("../PatrolPoints/Pos
 
 [node name="plushie" parent="." instance=ExtResource("4_aqk2v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.168529, 12.514498, 13.442668)
+id = 0
 
 [node name="shape" type="MeshInstance3D" parent="plushie"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5287173, 0)

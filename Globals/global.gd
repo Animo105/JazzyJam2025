@@ -1,4 +1,8 @@
 extends Node
+signal plushCollected(id : int)
+signal lookingAtPlush()
+
+var nbPlushCollected : int = 0
 
 signal is_chasing(enable : bool)
 

@@ -28,6 +28,8 @@ var fov_tween : Tween
 
 var last_direction : Vector3
 
+
+
 func _ready() -> void:
 	camera.fov = basic_fov
 	camera.position = DEFAUT_CAM_POS
@@ -114,7 +116,11 @@ func apply_gravity(delta : float)->void:
 
 func check_range():
 	if range.is_colliding() && range.get_collider() is plush:
-		print("PLUSH IN VIEW")
+		Global.lookingAtPlush.emit()
+		if Input.is_action_just_pressed("interract"):
+			Global.plushCollected.emit(range.get_collider().id)
+			Global.nbPlushCollected += 1
+			print("you collected : ", Global.nbPlushCollected)
 
 func update_velocity():
 	velocity.x = move_toward(velocity.x, 0, DEFAULT_DECELERATION)

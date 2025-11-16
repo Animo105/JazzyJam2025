@@ -11,8 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://baych4ewo4ra2" path="res://Assets/png/spotlight.png" id="8_00tjw"]
 [ext_resource type="Script" uid="uid://cnotwt57yrto2" path="res://Player/PlayerStates/JumpState.gd" id="8_apopc"]
 [ext_resource type="Script" uid="uid://b0xlvi5jmi824" path="res://Player/PlayerStates/WindingFlashlight.gd" id="9_p5o4e"]
-[ext_resource type="Script" uid="uid://da10f7kbhlys8" path="res://Player/flash_light.gd" id="9_x3vf3"]
 [ext_resource type="PackedScene" uid="uid://bb0tpgsd3j0mg" path="res://Player/Screen Effects/shader_canvas.tscn" id="11_5htga"]
+[ext_resource type="Script" path="res://Player/flash_light.gd" id="11_dkpta"]
 [ext_resource type="AudioStream" uid="uid://cbhxudjulu83s" path="res://Assets/Musics/Flashlight Button Sound Effect 4.mp3" id="12_dkpta"]
 [ext_resource type="AudioStream" uid="uid://cwxvgeekc12qd" path="res://Assets/Musics/walk.mp3" id="13_p5o4e"]
 
@@ -101,7 +101,7 @@ light_projector = ExtResource("8_00tjw")
 shadow_enabled = true
 spot_range = 20.444044
 spot_angle = 46.75568
-script = ExtResource("9_x3vf3")
+script = ExtResource("11_dkpta")
 
 [node name="clic" type="AudioStreamPlayer" parent="neck/camera/flashlight"]
 stream = ExtResource("12_dkpta")

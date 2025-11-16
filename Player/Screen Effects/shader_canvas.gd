@@ -10,9 +10,9 @@ var ball_effect : bool = false:
 			ballpit_tween.kill()
 		ballpit_tween = create_tween()
 		if value:
-			ballpit_tween.tween_property(texture_rect_ball, "offset_top", 0, 0.2)
+			ballpit_tween.tween_property(texture_rect_ball, "offset_top", 0, 0.1)
 		else:
-			ballpit_tween.tween_property(texture_rect_ball, "offset_top", 961, 0.2) #961 = taille de l'image de balles
+			ballpit_tween.tween_property(texture_rect_ball, "offset_top", 446, 0.1) #446 = taille de l'image de balles
 
 func _ready() -> void:
 	texture_rect_ball.offset_top = 961

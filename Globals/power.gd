@@ -37,7 +37,10 @@ func _on_flashlight_change(is_on : bool):
 		timer.stop()
 
 func _on_timer_timeout():
-	power -= 5
+	if power == 0:
+		timer.stop()
+	else:
+		power -= 20
 
 func _on_recharge(recharginOn : bool):
 	if recharginOn:

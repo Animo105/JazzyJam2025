@@ -8,6 +8,7 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	if (Power.power <= 0):
+		
 		var rng = RandomNumberGenerator.new()
 		if !is_flashlight_on == false:
 			for i in 4:
@@ -17,6 +18,7 @@ func _physics_process(_delta: float) -> void:
 				await get_tree().create_timer(rng.randf_range(0.05, 0.1)).timeout
 		hide()
 		is_flashlight_on = false
+		Power.flashlight_on.emit(is_flashlight_on)
 
 
 func _input(event: InputEvent) -> void:

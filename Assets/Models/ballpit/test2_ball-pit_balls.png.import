@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0jgauf7lslxl"
-path.s3tc="res://.godot/imported/test1_modul_balls.png-8f6dd1a799aefe73b6a8cf035c5e56af.s3tc.ctex"
+uid="uid://kjnwte2ix8dv"
+path.s3tc="res://.godot/imported/test2_ball-pit_balls.png-a0a5bf51bc1f4b95d8b407cf6c718151.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/Models/test1_modul_balls.png"
-dest_files=["res://.godot/imported/test1_modul_balls.png-8f6dd1a799aefe73b6a8cf035c5e56af.s3tc.ctex"]
+source_file="res://Assets/Models/ballpit/test2_ball-pit_balls.png"
+dest_files=["res://.godot/imported/test2_ball-pit_balls.png-a0a5bf51bc1f4b95d8b407cf6c718151.s3tc.ctex"]
 
 [params]
 

@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://eveum82xtlme"
-path.s3tc="res://.godot/imported/test2_modul_close-texture-red-foam-mattress-260nw-2680536665.png-2d6ae83f1b043241a2b50483a043c051.s3tc.ctex"
+uid="uid://b1loxoub4i2fx"
+path.s3tc="res://.godot/imported/test2_modul_360_F_210309278_SJt9lIeRI2e8fNkYdW7FqsjMUmoxGkEZ.jpg-332aa5d7b3bc817de67e2d28f19900ad.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "0fdb214943c7c04885abef1966e6a74a"
+"md5": "2b1c1c743bcce706146ffaa6712498b1"
 }
 
 [deps]
 
-source_file="res://Assets/Models/test2_modul_close-texture-red-foam-mattress-260nw-2680536665.png"
-dest_files=["res://.godot/imported/test2_modul_close-texture-red-foam-mattress-260nw-2680536665.png-2d6ae83f1b043241a2b50483a043c051.s3tc.ctex"]
+source_file="res://Assets/Models/modules de test/test2_modul_360_F_210309278_SJt9lIeRI2e8fNkYdW7FqsjMUmoxGkEZ.jpg"
+dest_files=["res://.godot/imported/test2_modul_360_F_210309278_SJt9lIeRI2e8fNkYdW7FqsjMUmoxGkEZ.jpg-332aa5d7b3bc817de67e2d28f19900ad.s3tc.ctex"]
 
 [params]
 

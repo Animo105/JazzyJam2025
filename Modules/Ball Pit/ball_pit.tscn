@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://c53o3ep75d2kj"]
 
 [ext_resource type="Script" uid="uid://bse7udmjplpjv" path="res://Modules/Ball Pit/ball_pit.gd" id="1_d8bxp"]
-[ext_resource type="PackedScene" uid="uid://f4v7fo7oxcv2" path="res://Assets/Models/test2_ball-pit.glb" id="1_re87q"]
+[ext_resource type="PackedScene" uid="uid://f4v7fo7oxcv2" path="res://Assets/Models/ballpit/test2_ball-pit.glb" id="1_re87q"]
 [ext_resource type="Script" uid="uid://cm4fg4yuh3rfs" path="res://Modules/GameObject.gd" id="3_qti0a"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_re87q"]

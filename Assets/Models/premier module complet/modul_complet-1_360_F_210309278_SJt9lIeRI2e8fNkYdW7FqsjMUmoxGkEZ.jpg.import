@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyauq1eyw7gy3"
-path.s3tc="res://.godot/imported/test2_modul_balls.png-133045828e6209666271fb6591ad92b8.s3tc.ctex"
+uid="uid://dchl226x6keil"
+path.s3tc="res://.godot/imported/modul_complet-1_360_F_210309278_SJt9lIeRI2e8fNkYdW7FqsjMUmoxGkEZ.jpg-cefc53ed839188ee3ff92c7723430303.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "6d2f0492b028524d6f40c80155bd1cbb"
+"md5": "2b1c1c743bcce706146ffaa6712498b1"
 }
 
 [deps]
 
-source_file="res://Assets/Models/test2_modul_balls.png"
-dest_files=["res://.godot/imported/test2_modul_balls.png-133045828e6209666271fb6591ad92b8.s3tc.ctex"]
+source_file="res://Assets/Models/premier module complet/modul_complet-1_360_F_210309278_SJt9lIeRI2e8fNkYdW7FqsjMUmoxGkEZ.jpg"
+dest_files=["res://.godot/imported/modul_complet-1_360_F_210309278_SJt9lIeRI2e8fNkYdW7FqsjMUmoxGkEZ.jpg-cefc53ed839188ee3ff92c7723430303.s3tc.ctex"]
 
 [params]
 

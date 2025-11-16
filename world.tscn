@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" path="res://ennemi/enemy.tscn" id="3_aqk2v"]
 [ext_resource type="Texture2D" uid="uid://b1loxoub4i2fx" path="res://Assets/Models/test2_modul_360_F_210309278_SJt9lIeRI2e8fNkYdW7FqsjMUmoxGkEZ.jpg" id="3_dwbse"]
 [ext_resource type="PackedScene" uid="uid://c53o3ep75d2kj" path="res://Modules/Ball Pit/ball_pit.tscn" id="3_tlwt5"]
-[ext_resource type="Texture2D" uid="uid://2c0tsglwa68b" path="res://Assets/Models/test2_modul_close-texture-yellow-foam-mattress-260nw-2680536665.png" id="4_pkg7o"]
+[ext_resource type="Texture2D" uid="uid://2c0tsglwa68b" path="res://Assets/Models/modules de test/test2_modul_close-texture-yellow-foam-mattress-260nw-2680536665.png" id="4_pkg7o"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gv5m4"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)

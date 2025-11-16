@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2c0tsglwa68b"
-path.s3tc="res://.godot/imported/test2_modul_close-texture-yellow-foam-mattress-260nw-2680536665.png-bb8f405f69c9b76d92fa19216db1f72b.s3tc.ctex"
+uid="uid://30kehyrvt0pv"
+path.s3tc="res://.godot/imported/modul_complet-1_istockphoto-1400136454-612x612.jpg-f843c0b045f6577e4534eecd442e3eeb.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "27849b2dd08badcef2349b5a0862cd43"
+"md5": "364eafdf1f96c69796d8b07422e71a0b"
 }
 
 [deps]
 
-source_file="res://Assets/Models/test2_modul_close-texture-yellow-foam-mattress-260nw-2680536665.png"
-dest_files=["res://.godot/imported/test2_modul_close-texture-yellow-foam-mattress-260nw-2680536665.png-bb8f405f69c9b76d92fa19216db1f72b.s3tc.ctex"]
+source_file="res://Assets/Models/premier module complet/modul_complet-1_istockphoto-1400136454-612x612.jpg"
+dest_files=["res://.godot/imported/modul_complet-1_istockphoto-1400136454-612x612.jpg-f843c0b045f6577e4534eecd442e3eeb.s3tc.ctex"]
 
 [params]
 

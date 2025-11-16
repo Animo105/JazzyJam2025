@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnyjai2frkutx"
-path.s3tc="res://.godot/imported/test1_modul_close-texture-yellow-foam-mattress-260nw-2680536665.png-b58a2478b2c231f81772c9207c107b9e.s3tc.ctex"
+uid="uid://2c0tsglwa68b"
+path.s3tc="res://.godot/imported/test2_modul_close-texture-yellow-foam-mattress-260nw-2680536665.png-9c7c92bfefccaac4831f4dc5e3ad830e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/Models/test1_modul_close-texture-yellow-foam-mattress-260nw-2680536665.png"
-dest_files=["res://.godot/imported/test1_modul_close-texture-yellow-foam-mattress-260nw-2680536665.png-b58a2478b2c231f81772c9207c107b9e.s3tc.ctex"]
+source_file="res://Assets/Models/modules de test/test2_modul_close-texture-yellow-foam-mattress-260nw-2680536665.png"
+dest_files=["res://.godot/imported/test2_modul_close-texture-yellow-foam-mattress-260nw-2680536665.png-9c7c92bfefccaac4831f4dc5e3ad830e.s3tc.ctex"]
 
 [params]
 

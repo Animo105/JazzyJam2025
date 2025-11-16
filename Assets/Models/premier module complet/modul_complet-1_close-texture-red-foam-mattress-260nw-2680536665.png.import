@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bj4iqvv6j7c4g"
-path.s3tc="res://.godot/imported/test1_modul_close-texture-red-foam-mattress-260nw-2680536665.png-68868228e20a7e5cc0f743210a9be92a.s3tc.ctex"
+uid="uid://qtj4h6u512nk"
+path.s3tc="res://.godot/imported/modul_complet-1_close-texture-red-foam-mattress-260nw-2680536665.png-257fe97ea8151cc5c1081429d0f70b16.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/Models/test1_modul_close-texture-red-foam-mattress-260nw-2680536665.png"
-dest_files=["res://.godot/imported/test1_modul_close-texture-red-foam-mattress-260nw-2680536665.png-68868228e20a7e5cc0f743210a9be92a.s3tc.ctex"]
+source_file="res://Assets/Models/premier module complet/modul_complet-1_close-texture-red-foam-mattress-260nw-2680536665.png"
+dest_files=["res://.godot/imported/modul_complet-1_close-texture-red-foam-mattress-260nw-2680536665.png-257fe97ea8151cc5c1081429d0f70b16.s3tc.ctex"]
 
 [params]
 

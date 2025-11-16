@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://f4v7fo7oxcv2"
-path="res://.godot/imported/test2_ball-pit.glb-42e325502f5182d010a2116a32af405f.scn"
+path="res://.godot/imported/test2_ball-pit.glb-1903f4c8f01f0b5ed54e5c517d82128b.scn"
 
 [deps]
 
-source_file="res://Assets/Models/test2_ball-pit.glb"
-dest_files=["res://.godot/imported/test2_ball-pit.glb-42e325502f5182d010a2116a32af405f.scn"]
+source_file="res://Assets/Models/ballpit/test2_ball-pit.glb"
+dest_files=["res://.godot/imported/test2_ball-pit.glb-1903f4c8f01f0b5ed54e5c517d82128b.scn"]
 
 [params]
 

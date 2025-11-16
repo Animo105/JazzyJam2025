@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctiumb24f34td"
-path.s3tc="res://.godot/imported/test2_ball-pit_360_F_210309278_SJt9lIeRI2e8fNkYdW7FqsjMUmoxGkEZ.jpg-e935400ada2da1f0b7a58e776f1d88fd.s3tc.ctex"
+uid="uid://bhh7xof53k62s"
+path.s3tc="res://.godot/imported/modul_complet-1_images.jpg-4c4dd803125b5052f5045570eca08752.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "2b1c1c743bcce706146ffaa6712498b1"
+"md5": "d932f2c50b84c8d97e6bf78e5f16baff"
 }
 
 [deps]
 
-source_file="res://Assets/Models/test2_ball-pit_360_F_210309278_SJt9lIeRI2e8fNkYdW7FqsjMUmoxGkEZ.jpg"
-dest_files=["res://.godot/imported/test2_ball-pit_360_F_210309278_SJt9lIeRI2e8fNkYdW7FqsjMUmoxGkEZ.jpg-e935400ada2da1f0b7a58e776f1d88fd.s3tc.ctex"]
+source_file="res://Assets/Models/premier module complet/modul_complet-1_images.jpg"
+dest_files=["res://.godot/imported/modul_complet-1_images.jpg-4c4dd803125b5052f5045570eca08752.s3tc.ctex"]
 
 [params]
 

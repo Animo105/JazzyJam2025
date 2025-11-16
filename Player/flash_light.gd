@@ -5,6 +5,7 @@ var is_flashlight_on : bool = false
 
 func _ready() -> void:
 	hide()
+	is_flashlight_on = false
 
 func _physics_process(_delta: float) -> void:
 	if (Power.power <= 0):

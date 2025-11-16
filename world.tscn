@@ -1,8 +1,8 @@
-[gd_scene load_steps=61 format=4 uid="uid://yme44nuryh7x"]
+[gd_scene load_steps=61 format=4 uid="uid://j6rvkritji5c"]
 
 [ext_resource type="PackedScene" uid="uid://cvxo4w6ov724i" path="res://Player/player.tscn" id="1_f3sb7"]
 [ext_resource type="Texture2D" uid="uid://eveum82xtlme" path="res://Assets/Models/test2_modul_close-texture-red-foam-mattress-260nw-2680536665.png" id="2_036b0"]
-[ext_resource type="PackedScene" uid="uid://861by1lecvay" path="res://ennemi/enemy.tscn" id="3_aqk2v"]
+[ext_resource type="PackedScene" path="res://ennemi/enemy.tscn" id="3_aqk2v"]
 [ext_resource type="Texture2D" uid="uid://b1loxoub4i2fx" path="res://Assets/Models/test2_modul_360_F_210309278_SJt9lIeRI2e8fNkYdW7FqsjMUmoxGkEZ.jpg" id="3_dwbse"]
 [ext_resource type="PackedScene" uid="uid://c53o3ep75d2kj" path="res://Modules/Ball Pit/ball_pit.tscn" id="3_tlwt5"]
 [ext_resource type="Texture2D" uid="uid://2c0tsglwa68b" path="res://Assets/Models/test2_modul_close-texture-yellow-foam-mattress-260nw-2680536665.png" id="4_pkg7o"]
@@ -15,8 +15,12 @@ ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 sky_material = SubResource("ProceduralSkyMaterial_gv5m4")
 
 [sub_resource type="Environment" id="Environment_fj7yv"]
-background_mode = 2
+background_mode = 1
+background_color = Color(0.04303915, 0.043039158, 0.04303913, 1)
+background_energy_multiplier = 3.0
 sky = SubResource("Sky_f3sb7")
+ambient_light_source = 1
+ambient_light_color = Color(0.12225217, 0.12225228, 0.12225217, 1)
 tonemap_mode = 2
 glow_enabled = true
 
@@ -594,10 +598,6 @@ shadow_mesh = SubResource("ArrayMesh_w4j1h")
 data = PackedVector3Array(9, 0, 10, 9.2929, 6.875, 9.2929, 9, 6.875, 10, 9, 0, 10, 9.2929, 0, 9.2929, 9.2929, 6.875, 9.2929, 9.2929, 0, 9.2929, 10, 6.875, 9, 9.2929, 6.875, 9.2929, 9.2929, 0, 9.2929, 10, 0, 9, 10, 6.875, 9, 9.2929, 0, 9.2929, 10, 0, 10, 10, 0, 9, 9.2929, 0, 9.2929, 9, 0, 10, 10, 0, 10, 10, 6.875, 9, 9, 6.875, 10, 9.2929, 6.875, 9.2929, 10, 6.875, 9, 10, 6.875, 10, 9, 6.875, 10, 10, 6.875, 9, 10, 0, 10, 10, 6.875, 10, 10, 6.875, 9, 10, 0, 9, 10, 0, 10, 9, 6.875, 10, 10, 0, 10, 9, 0, 10, 9, 6.875, 10, 10, 6.875, 10, 10, 0, 10)
 
 [node name="world" type="Node3D"]
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
-shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_fj7yv")

@@ -88,12 +88,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.65221643, 0)
 light_color = Color(1, 1, 0.49019608, 1)
 light_projector = ExtResource("8_00tjw")
 shadow_enabled = true
-spot_range = 10.502275
-spot_angle = 33.306637
+spot_range = 20.444044
+spot_angle = 46.75568
 script = ExtResource("9_x3vf3")
 
 [node name="CameraCanvas" parent="neck/camera" instance=ExtResource("11_5htga")]
 layer = 2
+
+[node name="dimlight" type="OmniLight3D" parent="neck/camera"]
+light_color = Color(0.2520276, 0.25202766, 0.25202763, 1)
+omni_range = 3.8831172
 
 [node name="Gui" parent="." instance=ExtResource("7_vtle1")]
 

@@ -5,6 +5,7 @@ extends Control
 
 func _ready() -> void:
 	Power.reset()
+	Stamina.reset()
 	Global.nbPlushCollected = 0
 	MusicPanel.plays_menu_music(true)
 	animation_player.play("Dance")

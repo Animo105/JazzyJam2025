@@ -13,6 +13,11 @@ var timerStaminaRegen : Timer = Timer.new()
 enum _State {Regen, Running}
 var state : _State = _State.Regen
 
+func reset():
+	stamina = 100
+	timerStaminaRegen.stop()
+	timerStaminaUse.stop()
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	add_child(timerStaminaUse)

@@ -466,5 +466,6 @@ unit_size = 5.0
 max_db = 5.0
 autoplay = true
 max_distance = 40.0
+parameters/looping = true
 
 [connection signal="body_entered" from="KillZone" to="." method="_on_kill_zone_body_entered"]

@@ -33,8 +33,6 @@ var fov_tween : Tween
 
 var last_direction : Vector3
 
-
-
 func _ready() -> void:
 	camera.fov = basic_fov
 	camera.position = DEFAUT_CAM_POS

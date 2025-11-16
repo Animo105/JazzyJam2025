@@ -36,6 +36,10 @@ func _physics_process(delta):
 			if !player.is_hiding && detect_player():
 				enter_chase_state()
 		State.CHASE:
+			if player.is_hiding:
+				print("go patrol")
+				enter_patrol_state()
+				return
 			chase_behavior()
 			if detect_player():
 				chase_timer.start()
@@ -72,7 +76,6 @@ func patrol_behavior() -> void:
 
 func chase_behavior() -> void:
 	if player.is_hiding:
-		enter_patrol_state()
 		return
 	nav_agent.target_position = player.global_position
 

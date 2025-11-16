@@ -26,11 +26,14 @@ func _ready() -> void:
 	recharging.connect(_on_recharge)
 
 func reset():
+	timer.stop()
+	timerCharge.stop()
 	timer.wait_time = 5
 	timerCharge.wait_time = 0.5
 	timer.autostart = true
 	timerCharge.autostart = true
 	power = 100
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

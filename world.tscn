@@ -1,4 +1,4 @@
-[gd_scene load_steps=113 format=4 uid="uid://j6rvkritji5c"]
+[gd_scene load_steps=113 format=4 uid="uid://b7a8ruydxasfd"]
 
 [ext_resource type="Script" uid="uid://1kwwu85ys8il" path="res://world.gd" id="1_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://cvxo4w6ov724i" path="res://Player/player.tscn" id="1_f3sb7"]
@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://dhg354d1blb6k" path="res://Assets/Models/Map final/map_finale_Carpet.png" id="3_cbp6q"]
 [ext_resource type="Texture2D" uid="uid://dgp4gdslxyi15" path="res://Assets/Models/Map final/map_finale_FoamFloor.jpg" id="4_26xuy"]
 [ext_resource type="Texture2D" uid="uid://mfuxq37g3pa" path="res://Assets/Models/Map final/map_finale_BlueBag.jpg" id="5_bc84e"]
-[ext_resource type="PackedScene" path="res://Collectible/plush_elephant.tscn" id="5_dwbse"]
-[ext_resource type="PackedScene" path="res://Collectible/plush_nounours.tscn" id="6_pkg7o"]
+[ext_resource type="PackedScene" uid="uid://c82mr3lx31gt1" path="res://Collectible/plush_elephant.tscn" id="5_dwbse"]
+[ext_resource type="PackedScene" uid="uid://ceh5blwbe7xri" path="res://Collectible/plush_nounours.tscn" id="6_pkg7o"]
 [ext_resource type="Texture2D" uid="uid://cgegrntvbavxd" path="res://Assets/Models/Map final/map_finale_MeshYellow.png" id="6_wukud"]
 [ext_resource type="Texture2D" uid="uid://cwamll2086qk2" path="res://Assets/Models/Map final/map_finale_YellowBag.jpg" id="7_il2jm"]
 [ext_resource type="Texture2D" uid="uid://e4w413470pey" path="res://Assets/Models/Map final/map_finale_PurpleBag.jpg" id="8_wjb0r"]
@@ -1706,7 +1706,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dwbse"]
-size = Vector3(2.45047, 1.6801758, 1.5238037)
+size = Vector3(1.823307, 1.6801758, 0.8809911)
 
 [node name="world" type="Node3D"]
 script = ExtResource("1_aqk2v")
@@ -2076,5 +2076,32 @@ collision_mask = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2099164, 13.294479, 11.020503)
 shape = SubResource("BoxShape3D_dwbse")
 
+[node name="Tutoriel message2" type="Area3D" parent="."]
+collision_mask = 2
+
+[node name="triggerBox" type="CollisionShape3D" parent="Tutoriel message2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8858957, 13.294479, 8.909515)
+shape = SubResource("BoxShape3D_dwbse")
+
+[node name="Tutoriel message3" type="Area3D" parent="."]
+collision_mask = 2
+
+[node name="triggerBox" type="CollisionShape3D" parent="Tutoriel message3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6159828, 13.294479, 7.2047977)
+shape = SubResource("BoxShape3D_dwbse")
+
+[node name="Tutoriel message4" type="Area3D" parent="."]
+collision_mask = 2
+
+[node name="triggerBox" type="CollisionShape3D" parent="Tutoriel message4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6159828, 13.294479, 5.9604406)
+shape = SubResource("BoxShape3D_dwbse")
+
 [connection signal="body_entered" from="Tutoriel message" to="." method="_on_tutoriel_message_body_entered"]
 [connection signal="body_exited" from="Tutoriel message" to="." method="_on_tutoriel_message_body_exited"]
+[connection signal="body_entered" from="Tutoriel message2" to="." method="_on_tutoriel_message_2_body_entered"]
+[connection signal="body_exited" from="Tutoriel message2" to="." method="_on_tutoriel_message_2_body_exited"]
+[connection signal="body_entered" from="Tutoriel message3" to="." method="_on_tutoriel_message_3_body_entered"]
+[connection signal="body_exited" from="Tutoriel message3" to="." method="_on_tutoriel_message_3_body_exited"]
+[connection signal="body_entered" from="Tutoriel message4" to="." method="_on_tutoriel_message_4_body_entered"]
+[connection signal="body_exited" from="Tutoriel message4" to="." method="_on_tutoriel_message_4_body_exited"]

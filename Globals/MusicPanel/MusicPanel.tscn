@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dtu3ciwlfwja"]
+[gd_scene load_steps=6 format=3 uid="uid://dtu3ciwlfwja"]
 
 [ext_resource type="Script" uid="uid://f1cbljrelolf" path="res://Globals/MusicPanel/music_panel.gd" id="1_xk6kd"]
 [ext_resource type="AudioStream" uid="uid://21m01mdoag8" path="res://Assets/Musics/GameJazz_Menu.mp3" id="2_kecub"]
 [ext_resource type="AudioStream" uid="uid://c5c4vbuemm42m" path="res://Assets/Musics/GameJazz - Chase_Loop.mp3" id="3_0s8kv"]
+[ext_resource type="AudioStream" uid="uid://o202skuo3tro" path="res://Assets/Musics/sfx/you win.mp3" id="4_42b6j"]
 [ext_resource type="AudioStream" uid="uid://cfeqb4r78iawi" path="res://Assets/Musics/sfx/Powering down sfx test.mp3" id="4_lin8t"]
 
 [node name="MusicPanel" type="Node"]
@@ -15,6 +16,9 @@ stream = ExtResource("2_kecub")
 stream = ExtResource("3_0s8kv")
 
 [node name="SFX" type="Node" parent="."]
+
+[node name="You win" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("4_42b6j")
 
 [node name="Power Out" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("4_lin8t")

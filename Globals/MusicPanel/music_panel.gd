@@ -3,6 +3,7 @@ extends Node
 @onready var _music_menu: AudioStreamPlayer = $"Music Menu"
 @onready var _chase_music: AudioStreamPlayer = $"Chase Music"
 @onready var _power_out: AudioStreamPlayer = $"SFX/Power Out"
+@onready var you_win_sfx: AudioStreamPlayer = $"SFX/You win"
 
 const NO_SOUND_DB = -40
 
@@ -28,6 +29,10 @@ func _enable_chase_music(enable : bool)->void:
 		tween.tween_property(_chase_music, "volume_db", NO_SOUND_DB, 1)
 		await tween.finished
 		_chase_music.stop()
+
+
+func play_you_win():
+	you_win_sfx.play()
 
 func _power_outage(value : int)->void:
 	if value <= 0:

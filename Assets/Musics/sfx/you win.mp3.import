@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://o202skuo3tro"
+path="res://.godot/imported/you win.mp3-a2a9e2161df00f63f0de2eb8c5143d88.mp3str"
+
+[deps]
+
+source_file="res://Assets/Musics/sfx/you win.mp3"
+dest_files=["res://.godot/imported/you win.mp3-a2a9e2161df00f63f0de2eb8c5143d88.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

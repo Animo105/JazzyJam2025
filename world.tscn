@@ -36,12 +36,6 @@ agent_radius = 0.7
 agent_max_climb = 0.5
 agent_max_slope = 60.0
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_036b0"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_dwbse"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_pkg7o"]
-
 [node name="world" type="Node3D"]
 script = ExtResource("1_aqk2v")
 
@@ -86,23 +80,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.864225, 12.578791, 4.6087
 player = NodePath("../Player")
 patrol_points = [NodePath("../PatrolPoints/Pos1"), NodePath("../PatrolPoints/Pos2"), NodePath("../PatrolPoints/Pos4"), NodePath("../PatrolPoints/Pos5"), NodePath("../PatrolPoints/Pos6"), NodePath("../PatrolPoints/Pos7"), NodePath("../PatrolPoints/Pos8")]
 
-[node name="plushie" parent="." instance=ExtResource("4_aqk2v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.168529, 12.514498, 13.442668)
-
-[node name="shape" type="MeshInstance3D" parent="plushie"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5287173, 0)
-mesh = SubResource("CylinderMesh_036b0")
-
-[node name="plushie2" parent="." instance=ExtResource("4_aqk2v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7131152, 12.514498, 10.88649)
+[node name="Plush Elephant" parent="." instance=ExtResource("5_dwbse")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.188223, 12.959593, 7.2701216)
 id = 1
 
-[node name="shape" type="MeshInstance3D" parent="plushie2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5287173, 0)
-mesh = SubResource("BoxMesh_dwbse")
-
-[node name="plushie3" parent="." instance=ExtResource("4_aqk2v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.168529, 12.514498, 11.073556)
+[node name="Plush Nounours" parent="." instance=ExtResource("6_pkg7o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4526043, 12.809069, 9.048141)
 id = 2
 
 [node name="shape" type="MeshInstance3D" parent="plushie3"]

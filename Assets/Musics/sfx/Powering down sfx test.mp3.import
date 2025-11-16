@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cfeqb4r78iawi"
+path="res://.godot/imported/Powering down sfx test.mp3-29562b9a881f9700f0346d1670adaa3a.mp3str"
+
+[deps]
+
+source_file="res://Assets/Musics/sfx/Powering down sfx test.mp3"
+dest_files=["res://.godot/imported/Powering down sfx test.mp3-29562b9a881f9700f0346d1670adaa3a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

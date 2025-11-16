@@ -1,9 +1,14 @@
-[gd_scene load_steps=9 format=4 uid="uid://c7m48tk4n44m"]
+[gd_scene load_steps=10 format=4 uid="uid://c7m48tk4n44m"]
 
 [ext_resource type="Texture2D" uid="uid://7v14vculgbm8" path="res://Assets/Models/JazzyTonic/JazzyTonic_JazzyTonicTexture.png" id="1_f3kwp"]
+[ext_resource type="AudioStream" uid="uid://dan0iy0fq7r1y" path="res://Assets/Musics/sfx/clock_monster.mp3" id="2_8kpsn"]
 
 [sub_resource type="GDScript" id="GDScript_8kpsn"]
 script/source = "extends Node3D
+
+# patrol - background + pas
+# chase - background + chase + pas (plus vite et plsu grave)
+# berserk - background build_up
 
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent
 @onready var ray_cast: RayCast3D = $RayCast
@@ -21,6 +26,10 @@ enum State { PATROL, CHASE }
 @export var ray_cast_sample: int = 5
 @export var turning_speed: float = 8
 
+# audio
+@onready var background_sfx: AudioStreamPlayer3D = $background
+
+
 var patrol_index := 0
 var state := State.PATROL
 var speed := patrol_speed
@@ -34,6 +43,7 @@ func _ready():
 
 
 func _physics_process(delta):
+	music_and_sfx_handler()
 	match state:
 
 		State.PATROL:
@@ -116,6 +126,11 @@ func line_of_sight() -> float:
 
 func _on_kill_zone_body_entered(_body: Node3D) -> void:
 	print(\"dead\")
+
+
+func music_and_sfx_handler():
+	if !background_sfx.playing:
+		background_sfx.play()
 "
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tt4v0"]
@@ -441,5 +456,13 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="KillZone"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 shape = SubResource("CylinderShape3D_8kpsn")
+
+[node name="background" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65900743, -0.18435347)
+stream = ExtResource("2_8kpsn")
+unit_size = 5.0
+max_db = 5.0
+autoplay = true
+max_distance = 40.0
 
 [connection signal="body_entered" from="KillZone" to="." method="_on_kill_zone_body_entered"]

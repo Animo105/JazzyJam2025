@@ -1,7 +1,7 @@
 extends PlayerState
 class_name PlayerRunState
 
-const SPEED : float = 4
+const SPEED : float = 3.7
 const ACCELERATION : float = 6.0
 const DECELERATION : float = 8.0
 var tilt_tween : Tween

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dye8175kbqo1b"
+path="res://.godot/imported/ball_pit impact.mp3-4d3f87e684163cded9ce065fe28830eb.mp3str"
+
+[deps]
+
+source_file="res://Assets/Musics/sfx/ball_pit impact.mp3"
+dest_files=["res://.godot/imported/ball_pit impact.mp3-4d3f87e684163cded9ce065fe28830eb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

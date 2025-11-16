@@ -1,7 +1,7 @@
 extends PlayerState
 class_name PlayerAirState
 
-const SPEED : float = 3
+const SPEED : float = 2.5
 const ACCELERATION : float = 0.2
 const DECELERATION : float = 0.4
 @onready var stepup: CollisionShape3D = $"../../stepup"
@@ -14,6 +14,7 @@ func enter():
 	stepup_3.disabled = true
 
 func exit():
+	player.land_sfx.play()
 	stepup.disabled = false
 	stepup_2.disabled = false
 	stepup_3.disabled = false

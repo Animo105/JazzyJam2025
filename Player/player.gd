@@ -7,10 +7,15 @@ class_name Player
 @onready var crouch_collision_shape: CollisionShape3D = $crouchCollisionShape
 @onready var detection: Area3D = $Detection
 @onready var camera_effects: CameraEffetcs = $neck/camera/CameraCanvas
-@onready var steps: AudioStreamPlayer = $steps
+
 @onready var fsm: PlayerFSM = $PlayerFSM
 @onready var range: RayCast3D = $neck/camera/range
 @onready var head_ray: RayCast3D = $headRay
+
+# sound effetcs
+@onready var steps_sfx: AudioStreamPlayer = $steps
+@onready var jump_sfx: AudioStreamPlayer = $Jump
+@onready var land_sfx: AudioStreamPlayer = $Land
 
 const DEFAUT_CAM_POS : Vector3 = Vector3(0, 0.9, 0)
 const CROUCH_CAM_POS : Vector3 = Vector3(0, 0.4, 0)
@@ -49,8 +54,8 @@ func is_moving()->bool:
 	return not velocity.x == 0 && not velocity.z == 0
 
 func play_step_sound():
-	steps.pitch_scale = randf() * 0.2 + 0.9
-	steps.play()
+	steps_sfx.pitch_scale = randf() * 0.2 + 0.3
+	steps_sfx.play()
 
 func _on_timeout():
 	if Stamina.stamina > 0:

@@ -6,6 +6,7 @@ class_name PlayerJumpState
 @onready var stepup_3: CollisionShape3D = $"../../stepup3"
 
 func enter():
+	player.jump_sfx.play()
 	stepup.disabled = true
 	stepup_2.disabled = true
 	stepup_3.disabled = true

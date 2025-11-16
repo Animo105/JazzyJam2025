@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://f1cbljrelolf" path="res://Globals/MusicPanel/music_panel.gd" id="1_xk6kd"]
 [ext_resource type="AudioStream" uid="uid://21m01mdoag8" path="res://Assets/Musics/GameJazz_Menu.mp3" id="2_kecub"]
 [ext_resource type="AudioStream" uid="uid://c5c4vbuemm42m" path="res://Assets/Musics/GameJazz - Chase_Loop.mp3" id="3_0s8kv"]
-[ext_resource type="AudioStream" uid="uid://cfeqb4r78iawi" path="res://Assets/Musics/Powering down sfx test.mp3" id="4_lin8t"]
+[ext_resource type="AudioStream" uid="uid://cfeqb4r78iawi" path="res://Assets/Musics/sfx/Powering down sfx test.mp3" id="4_lin8t"]
 
 [node name="MusicPanel" type="Node"]
 script = ExtResource("1_xk6kd")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cvxo4w6ov724i"]
+[gd_scene load_steps=22 format=3 uid="uid://cvxo4w6ov724i"]
 
 [ext_resource type="Script" uid="uid://ca7ll4bopkqpv" path="res://Player/player.gd" id="1_l8h54"]
 [ext_resource type="Script" uid="uid://t5xg36eqq4n0" path="res://Player/PlayerStates/PlayerFSM.gd" id="2_4ntmi"]
@@ -12,9 +12,11 @@
 [ext_resource type="Script" uid="uid://cnotwt57yrto2" path="res://Player/PlayerStates/JumpState.gd" id="8_apopc"]
 [ext_resource type="Script" uid="uid://b0xlvi5jmi824" path="res://Player/PlayerStates/WindingFlashlight.gd" id="9_p5o4e"]
 [ext_resource type="PackedScene" uid="uid://bb0tpgsd3j0mg" path="res://Player/Screen Effects/shader_canvas.tscn" id="11_5htga"]
-[ext_resource type="Script" path="res://Player/flash_light.gd" id="11_dkpta"]
-[ext_resource type="AudioStream" uid="uid://cbhxudjulu83s" path="res://Assets/Musics/Flashlight Button Sound Effect 4.mp3" id="12_dkpta"]
-[ext_resource type="AudioStream" uid="uid://cwxvgeekc12qd" path="res://Assets/Musics/walk.mp3" id="13_p5o4e"]
+[ext_resource type="Script" uid="uid://da10f7kbhlys8" path="res://Player/flash_light.gd" id="11_dkpta"]
+[ext_resource type="AudioStream" uid="uid://cbhxudjulu83s" path="res://Assets/Musics/sfx/flashlight click.mp3" id="12_dkpta"]
+[ext_resource type="AudioStream" uid="uid://cwxvgeekc12qd" path="res://Assets/Musics/sfx/walk.mp3" id="13_p5o4e"]
+[ext_resource type="AudioStream" uid="uid://d2k037sgff1yr" path="res://Assets/Musics/sfx/jump.mp3" id="16_pisgm"]
+[ext_resource type="AudioStream" uid="uid://bb5cbt0byeiep" path="res://Assets/Musics/sfx/land.mp3" id="17_b1ygp"]
 
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_x3vf3"]
 length = 0.25
@@ -126,10 +128,20 @@ collision_mask = 8
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27867752, 0)
 shape = SubResource("BoxShape3D_apopc")
 
+[node name="headRay" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5478367, 0)
+target_position = Vector3(0, 0.5, 0)
+
+[node name="AudioListener3D" type="AudioListener3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8797139, 0)
+current = true
+
 [node name="steps" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_p5o4e")
 volume_db = -3.0
 
-[node name="headRay" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5478367, 0)
-target_position = Vector3(0, 0.5, 0)
+[node name="Jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_pisgm")
+
+[node name="Land" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_b1ygp")

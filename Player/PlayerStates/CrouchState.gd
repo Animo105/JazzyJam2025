@@ -1,7 +1,7 @@
 extends PlayerState
 class_name PlayercrouchState
 
-const SPEED : float = 2.0
+const SPEED : float = 1
 const ACCELERATION : float = 4.0
 const DECELERATION : float = 4.0
 

@@ -72,6 +72,7 @@ func patrol_behavior() -> void:
 
 func chase_behavior() -> void:
 	if player.is_hiding:
+		enter_patrol_state()
 		return
 	nav_agent.target_position = player.global_position
 

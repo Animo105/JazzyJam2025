@@ -116,11 +116,13 @@ func apply_gravity(delta : float)->void:
 
 func check_range():
 	if range.is_colliding() && range.get_collider() is plush:
-		Global.lookingAtPlush.emit()
+		Global.lookingAtPlush.emit(true)
 		if Input.is_action_just_pressed("interract"):
 			Global.plushCollected.emit(range.get_collider().id)
 			Global.nbPlushCollected += 1
 			print("you collected : ", Global.nbPlushCollected)
+	else:
+		Global.lookingAtPlush.emit(false)
 
 func update_velocity():
 	velocity.x = move_toward(velocity.x, 0, DEFAULT_DECELERATION)

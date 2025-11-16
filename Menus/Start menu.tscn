@@ -18,6 +18,11 @@ sky = SubResource("Sky_y6gm4")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tsqbs"]
+albedo_texture = ExtResource("4_tsqbs")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_y6gm4"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mwn2y"]
 resource_name = "JazzyTonic"
 cull_mode = 2
@@ -96,6 +101,7 @@ bind/14/pose = Transform3D(0.6466009, -0.7624588, 0.023745526, 0.7203077, 0.6000
 [sub_resource type="Animation" id="Animation_cb0rp"]
 resource_name = "Dance"
 length = 7.0833335
+loop_mode = 1
 tracks/0/type = "position_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
@@ -286,6 +292,7 @@ tracks/12/keys = PackedFloat32Array(0, 1, 0.176857, -0.5857977, -0.410748, 0.675
 [sub_resource type="Animation" id="Animation_pl4ca"]
 resource_name = "Walk"
 length = 1.6666666
+loop_mode = 1
 tracks/0/type = "position_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
@@ -385,11 +392,6 @@ _data = {
 &"Walk": SubResource("Animation_pl4ca")
 }
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tsqbs"]
-albedo_texture = ExtResource("4_tsqbs")
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_y6gm4"]
-
 [node name="StartMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -437,8 +439,13 @@ text = "Quit"
 [node name="Camera3D" type="Camera3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4975915, -1.4247338)
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(7.652819, 0, 0, 0, -4.3711395e-08, -10.896111, 0, 1.0000002, -4.762841e-07, 0, 0, -6.1239448)
+material_override = SubResource("StandardMaterial3D_tsqbs")
+mesh = SubResource("PlaneMesh_y6gm4")
+
 [node name="JazzyTonic2" type="Node3D" parent="Node3D"]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.6012142, -5.306012)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.6148782, -5.771327)
 
 [node name="JazzyTonic" type="Node3D" parent="Node3D/JazzyTonic2"]
 
@@ -447,22 +454,22 @@ bones/0/name = "Torso"
 bones/0/parent = -1
 bones/0/rest = Transform3D(0, 0, 1, 0, 0.99999994, 0, -1, 0, 0, 0, 0.43273908, 0)
 bones/0/enabled = true
-bones/0/position = Vector3(0, 0.4327391, 0)
-bones/0/rotation = Quaternion(0, 0.7071068, 0, 0.7071068)
+bones/0/position = Vector3(0, 0.43273908, 0)
+bones/0/rotation = Quaternion(0, 0.70710677, 0, 0.70710677)
 bones/0/scale = Vector3(1, 0.99999994, 1)
 bones/1/name = "UpperLeg.L"
 bones/1/parent = 0
 bones/1/rest = Transform3D(1, 8.94978e-08, 1.3401772e-06, -9.4703614e-07, -0.6605711, 0.75076365, 9.524738e-07, -0.7507635, -0.6605713, 1.259991e-08, 0.0645155, -0.1056957)
 bones/1/enabled = true
 bones/1/position = Vector3(1.259991e-08, 0.0645155, -0.1056957)
-bones/1/rotation = Quaternion(0.91120005, -2.352772e-07, 6.290196e-07, -0.41196412)
+bones/1/rotation = Quaternion(0.91120005, -2.3527718e-07, 6.2901955e-07, -0.41196412)
 bones/1/scale = Vector3(1, 1, 1.0000002)
 bones/2/name = "Leg.L"
 bones/2/parent = 1
 bones/2/rest = Transform3D(1, 6.7678855e-07, -8.6505224e-07, -1.07009896e-07, 0.8438847, 0.5365245, 1.093118e-06, -0.5365244, 0.84388477, 9.769963e-15, 0.08904384, -7.4505637e-09)
 bones/2/enabled = true
 bones/2/position = Vector3(9.769963e-15, 0.08904384, -7.4505637e-09)
-bones/2/rotation = Quaternion(-0.27938795, -5.098455e-07, -2.0407631e-07, 0.9601783)
+bones/2/rotation = Quaternion(-0.27938795, -5.098455e-07, -2.040763e-07, 0.9601783)
 bones/2/scale = Vector3(1, 0.99999994, 1)
 bones/3/name = "Tail.1"
 bones/3/parent = 0
@@ -476,14 +483,14 @@ bones/4/parent = 3
 bones/4/rest = Transform3D(0.49709857, -0.86398566, 0.08013584, 0.86721396, 0.49162817, -0.079004586, 0.028861793, 0.10876799, 0.9936481, 1.8626466e-08, 0.084639825, 1.4210855e-14)
 bones/4/enabled = true
 bones/4/position = Vector3(1.8626466e-08, 0.084639825, 1.4210855e-14)
-bones/4/rotation = Quaternion(0.05436521, 0.014845215, 0.5012288, 0.86347777)
+bones/4/rotation = Quaternion(0.054365207, 0.014845217, 0.50122887, 0.8634777)
 bones/4/scale = Vector3(1, 0.99999994, 1)
 bones/5/name = "Tail.3"
 bones/5/parent = 4
 bones/5/rest = Transform3D(0.9422492, 0.33155403, -0.047312062, -0.3220772, 0.8583164, -0.39944857, -0.09183007, 0.39161828, 0.91553384, -3.579771e-08, 0.27764398, 1.8626451e-09)
 bones/5/enabled = true
 bones/5/position = Vector3(-3.579771e-08, 0.27764398, 1.8626451e-09)
-bones/5/rotation = Quaternion(0.20518216, 0.011546801, -0.16953492, 0.9638594)
+bones/5/rotation = Quaternion(0.20518214, 0.011546808, -0.16953489, 0.9638594)
 bones/5/scale = Vector3(1, 1, 0.9999999)
 bones/6/name = "Shoulder.L"
 bones/6/parent = 0
@@ -497,7 +504,7 @@ bones/7/parent = 6
 bones/7/rest = Transform3D(1, -1.5505666e-08, -7.643605e-08, 5.432331e-08, 0.8416915, 0.5399589, 5.5963145e-08, -0.53995895, 0.8416914, -3.5527137e-15, 0.10879363, -1.2212453e-15)
 bones/7/enabled = true
 bones/7/position = Vector3(-3.5527137e-15, 0.10879363, -1.2212453e-15)
-bones/7/rotation = Quaternion(-0.44915932, -4.8832337e-08, 6.9726553e-09, 0.89345175)
+bones/7/rotation = Quaternion(-0.28134373, -3.4493073e-08, 1.8192074e-08, 0.95960706)
 bones/7/scale = Vector3(1, 1.0000001, 1)
 bones/8/name = "UpperLeg.R"
 bones/8/parent = 0
@@ -511,7 +518,7 @@ bones/9/parent = 8
 bones/9/rest = Transform3D(1, -6.097369e-07, 7.595888e-07, 1.0700964e-07, 0.8438846, 0.5365245, -9.681443e-07, -0.5365245, 0.8438846, 8.881784e-15, 0.08904381, -4.470347e-08)
 bones/9/enabled = true
 bones/9/position = Vector3(8.881784e-15, 0.08904381, -4.470347e-08)
-bones/9/rotation = Quaternion(-0.27938798, 4.4984694e-07, 1.8661811e-07, 0.9601783)
+bones/9/rotation = Quaternion(-0.27938798, 4.49847e-07, 1.8661811e-07, 0.9601783)
 bones/9/scale = Vector3(1, 0.9999999, 0.9999999)
 bones/10/name = "Shoulder.R"
 bones/10/parent = 0
@@ -525,7 +532,7 @@ bones/11/parent = 10
 bones/11/rest = Transform3D(1, 6.436811e-08, -1.0403922e-07, 1.9988136e-09, 0.84169143, 0.5399588, 1.2232506e-07, -0.53995883, 0.8416913, 3.5527137e-15, 0.10879366, -4.4703487e-08)
 bones/11/enabled = true
 bones/11/position = Vector3(3.5527137e-15, 0.10879366, -4.4703487e-08)
-bones/11/rotation = Quaternion(-0.5039421, -3.069443e-08, 4.515206e-10, 0.86373746)
+bones/11/rotation = Quaternion(-0.2813437, -5.8973175e-08, -1.6248654e-08, 0.95960706)
 bones/11/scale = Vector3(1, 1, 0.9999999)
 bones/12/name = "Head"
 bones/12/parent = 0
@@ -539,14 +546,14 @@ bones/13/parent = 12
 bones/13/rest = Transform3D(0.023745483, 0.3480496, -0.9371754, 0.7624589, 0.6000154, 0.24215323, 0.64660096, -0.7203077, -0.2511258, -0.10602522, 0.3560952, -0.18214297)
 bones/13/enabled = true
 bones/13/position = Vector3(-0.10602522, 0.3560952, -0.18214297)
-bones/13/rotation = Quaternion(-0.41074815, -0.67590606, 0.17685685, 0.58579755)
+bones/13/rotation = Quaternion(-0.4107481, -0.67590594, 0.17685685, 0.58579755)
 bones/13/scale = Vector3(1.0000001, 1.0000001, 1)
 bones/14/name = "Ear.R"
 bones/14/parent = 12
 bones/14/rest = Transform3D(-0.02374566, 0.34804913, -0.9371754, -0.7624589, 0.6000154, 0.24215303, 0.646601, 0.7203077, 0.25112534, -0.10602532, 0.3560952, 0.18214291)
 bones/14/enabled = true
 bones/14/position = Vector3(-0.10602532, 0.3560952, 0.18214291)
-bones/14/rotation = Quaternion(0.17685695, -0.5857977, -0.41074803, 0.67590594)
+bones/14/rotation = Quaternion(0.17685696, -0.58579767, -0.410748, 0.6759059)
 bones/14/scale = Vector3(1.0000001, 0.99999994, 0.9999999)
 
 [node name="JazzyTonicModel" type="MeshInstance3D" parent="Node3D/JazzyTonic2/JazzyTonic/Skeleton3D"]
@@ -557,11 +564,6 @@ skin = SubResource("Skin_0thy4")
 libraries = {
 &"": SubResource("AnimationLibrary_h71ci")
 }
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(7.652819, 0, 0, 0, -4.3711395e-08, -10.896111, 0, 1.0000002, -4.762841e-07, 0, 0, -6.1239448)
-material_override = SubResource("StandardMaterial3D_tsqbs")
-mesh = SubResource("PlaneMesh_y6gm4")
 
 [connection signal="pressed" from="Menu/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Menu/Help" to="." method="_on_help_pressed"]

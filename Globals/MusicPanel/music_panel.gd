@@ -32,3 +32,7 @@ func _enable_chase_music(enable : bool)->void:
 func _power_outage(value : int)->void:
 	if value <= 0:
 		_power_out.play()
+
+func clear_music():
+	_music_menu.stop()
+	_chase_music.stop()

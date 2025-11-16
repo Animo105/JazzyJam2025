@@ -320,6 +320,7 @@ chase_speed = 3.0
 [node name="NavigationAgent" type="NavigationAgent3D" parent="."]
 navigation_layers = 5
 radius = 0.7
+debug_enabled = true
 
 [node name="ChaseTimer" type="Timer" parent="."]
 wait_time = 5.0

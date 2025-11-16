@@ -48,9 +48,11 @@ func _physics_process(delta):
 
 		State.PATROL:
 			patrol_behavior()
-			if detect_player():
+			if !player.is_hiding and detect_player():
 				enter_chase_state()
 		State.CHASE:
+			if player.is_hiding:
+				enter_patrol_state()
 			chase_behavior()
 			if detect_player():
 				chase_timer.start()
@@ -125,6 +127,8 @@ func line_of_sight() -> float:
 	
 
 func _on_kill_zone_body_entered(_body: Node3D) -> void:
+	if player.is_hiding:
+		return
 	get_tree().change_scene_to_file(\"res://ennemi/killScene.tscn\")
 
 

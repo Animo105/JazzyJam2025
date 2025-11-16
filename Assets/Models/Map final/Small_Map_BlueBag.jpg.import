@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqis6o4div0k8"
-path.s3tc="res://.godot/imported/JazzyTonic_JazzyTonicTexture.png-4663df6ce7c74072870d98864cca9da4.s3tc.ctex"
+uid="uid://cjeydarifvfhh"
+path.s3tc="res://.godot/imported/Small_Map_BlueBag.jpg-d5a1697f7aba0fdc1eaa9fda4586045b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "1f63135d3fb665696a7491a1e97c509e"
+"md5": "627db9466e16c68a3f2ae80462199308"
 }
 
 [deps]
 
-source_file="res://Assets/Models/JazzyTonic/JazzyTonic_JazzyTonicTexture.png"
-dest_files=["res://.godot/imported/JazzyTonic_JazzyTonicTexture.png-4663df6ce7c74072870d98864cca9da4.s3tc.ctex"]
+source_file="res://Assets/Models/Map final/Small_Map_BlueBag.jpg"
+dest_files=["res://.godot/imported/Small_Map_BlueBag.jpg-d5a1697f7aba0fdc1eaa9fda4586045b.s3tc.ctex"]
 
 [params]
 

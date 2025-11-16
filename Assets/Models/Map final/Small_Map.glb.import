@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dtneephl24jfc"
-path="res://.godot/imported/JazzyTonic.glb-fe394b6804a2dbc5ba71e7ddaa59ecf3.scn"
+uid="uid://cujkowtqxad83"
+path="res://.godot/imported/Small_Map.glb-d3ef579181fc2f559e8d754be7428353.scn"
 
 [deps]
 
-source_file="res://Assets/Models/JazzyTonic/JazzyTonic.glb"
-dest_files=["res://.godot/imported/JazzyTonic.glb-fe394b6804a2dbc5ba71e7ddaa59ecf3.scn"]
+source_file="res://Assets/Models/Map final/Small_Map.glb"
+dest_files=["res://.godot/imported/Small_Map.glb-d3ef579181fc2f559e8d754be7428353.scn"]
 
 [params]
 

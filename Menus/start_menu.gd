@@ -1,10 +1,11 @@
 extends Control
 
-
+@onready var animation_player: AnimationPlayer = $Node3D/JazzyTonic2/AnimationPlayer
 @onready var audio_stream_player: AudioStreamPlayer = $Menu/Help/AudioStreamPlayer
 
 func _ready() -> void:
 	MusicPanel.plays_menu_music(true)
+	animation_player.play("Dance")
 
 func _on_start_pressed() -> void:
 	MusicPanel.plays_menu_music(false)

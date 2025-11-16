@@ -8,7 +8,7 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	if (Power.power <= 0):
-		
+		Global.message.emit("Hold F to recharge flashlight")
 		var rng = RandomNumberGenerator.new()
 		if !is_flashlight_on == false:
 			for i in 4:

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dk67l8wu2pmwk"]
+[gd_scene load_steps=6 format=3 uid="uid://dk67l8wu2pmwk"]
 
 [ext_resource type="Texture2D" uid="uid://dvf6g2ft4bmgx" path="res://Assets/png/battery-sheet.png" id="1_644iy"]
 [ext_resource type="Script" uid="uid://b0l4lusxfjoeh" path="res://UI/power.gd" id="2_yki11"]
 [ext_resource type="Script" uid="uid://c5aeyywnx30uh" path="res://UI/sprintbar.gd" id="3_dl5f7"]
 [ext_resource type="Script" uid="uid://ccpl72mye4mo4" path="res://UI/window.gd" id="4_n3xue"]
+[ext_resource type="Script" uid="uid://4a1da4ur0j5a" path="res://UI/window_2.gd" id="5_u703e"]
 
 [node name="Gui" type="CanvasLayer"]
 
@@ -62,3 +63,18 @@ offset_bottom = 22.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("4_n3xue")
+
+[node name="window2" type="Label" parent="Pop Ups"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -22.0
+offset_right = 25.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_u703e")

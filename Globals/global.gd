@@ -1,6 +1,7 @@
 extends Node
 signal plushCollected(id : int)
 signal lookingAtPlush(looking : bool)
+signal message(text : String)
 
 var nbPlushCollected : int = 0
 

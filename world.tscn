@@ -1,6 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://j6rvkritji5c"]
+[gd_scene load_steps=12 format=3 uid="uid://b7a8ruydxasfd"]
 
-[ext_resource type="Script" path="res://world.gd" id="1_aqk2v"]
+[ext_resource type="Script" uid="uid://1kwwu85ys8il" path="res://world.gd" id="1_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://cvxo4w6ov724i" path="res://Player/player.tscn" id="1_f3sb7"]
 [ext_resource type="PackedScene" uid="uid://duvieshugdb7g" path="res://Assets/Models/Map Antoine/Map.glb" id="3_036b0"]
 [ext_resource type="PackedScene" uid="uid://c7m48tk4n44m" path="res://ennemi/enemy.tscn" id="3_aqk2v"]
@@ -35,6 +35,9 @@ agent_height = 2.0
 agent_radius = 0.7
 agent_max_climb = 0.5
 agent_max_slope = 60.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dwbse"]
+size = Vector3(2.45047, 1.6801758, 1.5238037)
 
 [node name="world" type="Node3D"]
 script = ExtResource("1_aqk2v")
@@ -87,3 +90,22 @@ id = 1
 [node name="Plush Nounours" parent="." instance=ExtResource("6_pkg7o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4526043, 12.809069, 9.048141)
 id = 2
+
+[node name="Tutoriel light 1" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.08871, 14.827283, 13.384018)
+
+[node name="Tutoriel light 2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.08871, 14.809577, 9.036625)
+
+[node name="Tutoriel light 3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7143021, 14.774817, 9.977679)
+
+[node name="Tutoriel message" type="Area3D" parent="."]
+collision_mask = 2
+
+[node name="triggerBox" type="CollisionShape3D" parent="Tutoriel message"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2099164, 13.294479, 11.020503)
+shape = SubResource("BoxShape3D_dwbse")
+
+[connection signal="body_entered" from="Tutoriel message" to="." method="_on_tutoriel_message_body_entered"]
+[connection signal="body_exited" from="Tutoriel message" to="." method="_on_tutoriel_message_body_exited"]

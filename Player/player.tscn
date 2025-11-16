@@ -86,6 +86,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
 [node name="flashlight" type="SpotLight3D" parent="neck/camera"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.65221643, 0)
 light_color = Color(1, 1, 0.49019608, 1)
+light_energy = 3.0
+light_indirect_energy = 2.0
 light_projector = ExtResource("8_00tjw")
 shadow_enabled = true
 spot_range = 20.444044

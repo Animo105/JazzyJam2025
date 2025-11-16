@@ -52,7 +52,6 @@ collision_layer = 8
 collision_mask = 0
 script = ExtResource("3_qti0a")
 object = "Ball Pit"
-metadata/_custom_type_script = "uid://cm4fg4yuh3rfs"
 
 [node name="box" type="CollisionShape3D" parent="Hiding zone"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0122113, 1.112793, 0.9522495)

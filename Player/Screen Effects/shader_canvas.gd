@@ -1,6 +1,7 @@
 extends CanvasLayer
 class_name CameraEffetcs
 @onready var texture_rect_ball: TextureRect = $TextureRect
+@onready var character_body_2d: CharacterBody2D = $CharacterBody2D
 
 var ballpit_tween : Tween
 

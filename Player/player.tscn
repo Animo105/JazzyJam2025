@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cvxo4w6ov724i"]
+[gd_scene load_steps=18 format=3 uid="uid://cvxo4w6ov724i"]
 
 [ext_resource type="Script" uid="uid://ca7ll4bopkqpv" path="res://Player/player.gd" id="1_l8h54"]
 [ext_resource type="Script" uid="uid://t5xg36eqq4n0" path="res://Player/PlayerStates/PlayerFSM.gd" id="2_4ntmi"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://cnotwt57yrto2" path="res://Player/PlayerStates/JumpState.gd" id="8_apopc"]
 [ext_resource type="Script" uid="uid://da10f7kbhlys8" path="res://Player/spot_light_3d.gd" id="9_x3vf3"]
 [ext_resource type="PackedScene" uid="uid://bb0tpgsd3j0mg" path="res://Player/Screen Effects/shader_canvas.tscn" id="11_5htga"]
+[ext_resource type="AudioStream" uid="uid://dvqa0b22qt6kv" path="res://Assets/Musics/footstep02.ogg" id="13_p5o4e"]
 
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_x3vf3"]
 
@@ -111,3 +112,6 @@ collision_mask = 8
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Detection"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_apopc")
+
+[node name="steps" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_p5o4e")

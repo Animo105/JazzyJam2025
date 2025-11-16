@@ -7,6 +7,8 @@ class_name Player
 @onready var crouch_collision_shape: CollisionShape3D = $crouchCollisionShape
 @onready var detection: Area3D = $Detection
 @onready var camera_effects: CameraEffetcs = $neck/camera/CameraCanvas
+@onready var steps: AudioStreamPlayer = $steps
+@onready var fsm: PlayerFSM = $PlayerFSM
 
 const DEFAUT_CAM_POS : Vector3 = Vector3(0, 1.2, 0)
 const CROUCH_CAM_POS : Vector3 = Vector3(0, 0.4, 0)
@@ -17,6 +19,29 @@ var basic_fov = 75
 var is_hiding : bool = false
 var pos_tween : Tween
 var fov_tween : Tween
+
+var last_direction : Vector3
+
+func _ready() -> void:
+	camera.fov = basic_fov
+
+func _process(delta: float) -> void:
+	fsm.update(delta)
+
+func _physics_process(delta: float) -> void:
+	if fov_tween:
+		fov_tween.kill()
+	fov_tween = create_tween()
+	fov_tween.tween_property(camera, 'fov', get_greater_velocity()+basic_fov, 0.1)
+	fsm.physics_update(delta)
+	move_and_slide()
+
+func is_moving()->bool:
+	return not velocity.x == 0 && not velocity.z == 0
+
+func play_step_sound():
+	steps.pitch_scale = randf() * 0.2 + 0.9
+	steps.play()
 
 func set_crouch(enable : bool):
 	if (enable):
@@ -35,29 +60,11 @@ func set_crouch(enable : bool):
 		pos_tween = create_tween()
 		pos_tween.tween_property(camera, "position", DEFAUT_CAM_POS, 0.1)
 
-@onready var fsm: PlayerFSM = $PlayerFSM
-
 func get_height()->float:
 	if regular_collision_shape.disabled:
 		return 2.0
 	else:
 		return 3.0
-
-func _ready() -> void:
-	camera.fov = basic_fov
-
-var last_direction : Vector3
-
-func _process(delta: float) -> void:
-	fsm.update(delta)
-
-func _physics_process(delta: float) -> void:
-	if fov_tween:
-		fov_tween.kill()
-	fov_tween = create_tween()
-	fov_tween.tween_property(camera, 'fov', get_greater_velocity()+basic_fov, 0.1)
-	fsm.physics_update(delta)
-	move_and_slide()
 
 func get_greater_velocity()->float:
 	return max(abs(velocity.x), abs(velocity.z))

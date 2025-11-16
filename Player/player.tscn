@@ -12,7 +12,7 @@
 [ext_resource type="Script" uid="uid://cnotwt57yrto2" path="res://Player/PlayerStates/JumpState.gd" id="8_apopc"]
 [ext_resource type="Script" uid="uid://da10f7kbhlys8" path="res://Player/spot_light_3d.gd" id="9_x3vf3"]
 [ext_resource type="PackedScene" uid="uid://bb0tpgsd3j0mg" path="res://Player/Screen Effects/shader_canvas.tscn" id="11_5htga"]
-[ext_resource type="AudioStream" uid="uid://dvqa0b22qt6kv" path="res://Assets/Musics/footstep02.ogg" id="13_p5o4e"]
+[ext_resource type="AudioStream" uid="uid://cwxvgeekc12qd" path="res://Assets/Musics/walk.mp3" id="13_p5o4e"]
 
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_x3vf3"]
 

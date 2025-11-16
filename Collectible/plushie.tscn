@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://bcj5as4aeafby"]
+[gd_scene load_steps=3 format=3 uid="uid://714t3v8w4w07"]
 
 [ext_resource type="Script" uid="uid://bvjuloljdbu8c" path="res://Collectible/plushie.gd" id="1_tfstf"]
 
@@ -6,7 +6,6 @@
 
 [node name="plushie" type="StaticBody3D"]
 script = ExtResource("1_tfstf")
-id = null
 
 [node name="collision" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.53042555, 0)

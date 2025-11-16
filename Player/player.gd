@@ -122,7 +122,6 @@ func check_range():
 		Global.lookingAtPlush.emit(true)
 		if Input.is_action_just_pressed("interract"):
 			Global.plushCollected.emit(_range.get_collider().id)
-			Global.nbPlushCollected += 1
 			print("you collected : ", Global.nbPlushCollected)
 	else:
 		Global.lookingAtPlush.emit(false)

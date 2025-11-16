@@ -37,5 +37,5 @@ func physics_update(delta:float):
 
 func transition():
 	if !Input.is_action_pressed("slide"):
-		if !player.ray_cast_3d_2.is_colliding():
+		if !player.head_ray.is_colliding():
 			fsm.change_state('ground')

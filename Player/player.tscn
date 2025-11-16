@@ -130,6 +130,6 @@ shape = SubResource("BoxShape3D_apopc")
 stream = ExtResource("13_p5o4e")
 volume_db = -3.0
 
-[node name="RayCast3D2" type="RayCast3D" parent="."]
+[node name="headRay" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5478367, 0)
 target_position = Vector3(0, 0.5, 0)

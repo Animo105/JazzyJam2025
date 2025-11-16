@@ -10,6 +10,7 @@ class_name Player
 @onready var steps: AudioStreamPlayer = $steps
 @onready var fsm: PlayerFSM = $PlayerFSM
 @onready var range: RayCast3D = $range
+@onready var head_ray: RayCast3D = $headRay
 
 const DEFAUT_CAM_POS : Vector3 = Vector3(0, 0.9, 0)
 const CROUCH_CAM_POS : Vector3 = Vector3(0, 0.4, 0)

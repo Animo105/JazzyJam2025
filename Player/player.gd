@@ -9,7 +9,7 @@ class_name Player
 @onready var camera_effects: CameraEffetcs = $neck/camera/CameraCanvas
 
 @onready var fsm: PlayerFSM = $PlayerFSM
-@onready var range: RayCast3D = $neck/camera/range
+@onready var _range: RayCast3D = $neck/camera/range
 @onready var head_ray: RayCast3D = $headRay
 
 # sound effetcs
@@ -120,10 +120,10 @@ func apply_gravity(delta : float)->void:
 	velocity += get_gravity() * delta
 
 func check_range():
-	if range.is_colliding() && range.get_collider() is plush:
+	if _range.is_colliding() && _range.get_collider() is plush:
 		Global.lookingAtPlush.emit(true)
 		if Input.is_action_just_pressed("interract"):
-			Global.plushCollected.emit(range.get_collider().id)
+			Global.plushCollected.emit(_range.get_collider().id)
 			Global.nbPlushCollected += 1
 			print("you collected : ", Global.nbPlushCollected)
 	else:

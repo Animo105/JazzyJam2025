@@ -12,13 +12,11 @@ var in_ball_pit : bool = false:
 		player.camera_effects.ball_effect = value
 
 func check_in_ball_pit():
-	var objects = player.detection.get_overlapping_bodies()
+	var objects = player.detection.get_overlapping_areas()
 	if objects != []:
 		for object in objects:
-			if object is GameObject:
-				if object.object == GameObject.BALL_PIT:
-					in_ball_pit = true
-					return
+			in_ball_pit = true
+			return
 	in_ball_pit = false
 
 func enter():

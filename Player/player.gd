@@ -28,14 +28,6 @@ func _ready() -> void:
 	camera.position = DEFAUT_CAM_POS
 	set_crouch(false)
 
-func _process(delta: float) -> void:
-	fsm.update(delta)
-	var hit = $neck/camera/RayCast3D.collide_with_areas
-
-	if hit:
-		if hit.is_in_group("collectible"):
-			print("You are looking at:", hit.name)
-
 func _physics_process(delta: float) -> void:
 
 	if fov_tween:

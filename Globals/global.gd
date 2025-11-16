@@ -19,4 +19,5 @@ func collect(_id : int):
 		MusicPanel.clear_music()
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		MusicPanel.play_you_win()
+		nbPlushCollected = 0
 		get_tree().call_deferred("change_scene_to_file",  "res://Menus/Start menu.tscn")

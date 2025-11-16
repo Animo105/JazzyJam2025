@@ -33,7 +33,7 @@ func _physics_process(delta):
 
 		State.PATROL:
 			patrol_behavior()
-			if detect_player():
+			if !player.is_hiding && detect_player():
 				enter_chase_state()
 		State.CHASE:
 			chase_behavior()
@@ -71,6 +71,8 @@ func patrol_behavior() -> void:
 
 
 func chase_behavior() -> void:
+	if player.is_hiding:
+		return
 	nav_agent.target_position = player.global_position
 
 
@@ -108,4 +110,6 @@ func line_of_sight() -> float:
 	
 
 func _on_kill_zone_body_entered(_body: Node3D) -> void:
-	print("dead")
+	if player.is_hiding:
+		return
+	get_tree().change_scene_to_file("res://ennemi/killScene.tscn")

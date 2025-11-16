@@ -125,6 +125,7 @@ shape = SubResource("BoxShape3D_apopc")
 
 [node name="steps" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_p5o4e")
+volume_db = -3.0
 
 [node name="RayCast3D2" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5478367, 0)

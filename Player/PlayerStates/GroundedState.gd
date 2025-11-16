@@ -1,7 +1,7 @@
 extends PlayerState
 class_name PlayerGroundState
 
-const SPEED : float = 2.5
+const SPEED : float = 2
 const ACCELERATION : float = 3.0
 const DECELERATION : float = 4.0
 

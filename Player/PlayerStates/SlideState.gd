@@ -4,8 +4,8 @@ class_name PlayerSlideState
 @onready var crouch_collision_shape: CollisionShape3D = $"../../crouchCollisionShape"
 @onready var regular_collision_shape: CollisionShape3D = $"../../regularCollisionShape"
 
-const ACCELERATION = 20
-const DECELERATION = 17
+const ACCELERATION = 15
+const DECELERATION = 10
 var dir : Vector3
 
 func enter():

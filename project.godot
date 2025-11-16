@@ -20,7 +20,6 @@ config/icon="res://Assets/png/icon.svg"
 Global="*res://Globals/global.gd"
 Power="*res://Globals/power.gd"
 Stamina="*res://Globals/stamina.gd"
-ToastManager="*res://Globals/Toasts/ToastUtils/ToastManager.gd"
 MusicPanel="*res://Globals/MusicPanel/MusicPanel.tscn"
 
 [display]

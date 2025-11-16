@@ -315,6 +315,7 @@ radius = 1.0
 
 [node name="Enemy" type="Node3D"]
 script = SubResource("GDScript_8kpsn")
+chase_speed = 3.0
 
 [node name="NavigationAgent" type="NavigationAgent3D" parent="."]
 navigation_layers = 5

@@ -1,11 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://j6rvkritji5c"]
+[gd_scene load_steps=11 format=3 uid="uid://j6rvkritji5c"]
 
-[ext_resource type="Script" uid="uid://1kwwu85ys8il" path="res://world.gd" id="1_aqk2v"]
+[ext_resource type="Script" path="res://world.gd" id="1_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://cvxo4w6ov724i" path="res://Player/player.tscn" id="1_f3sb7"]
 [ext_resource type="PackedScene" uid="uid://duvieshugdb7g" path="res://Assets/Models/Map Antoine/Map.glb" id="3_036b0"]
 [ext_resource type="PackedScene" uid="uid://c7m48tk4n44m" path="res://ennemi/enemy.tscn" id="3_aqk2v"]
-[ext_resource type="PackedScene" uid="uid://bcj5as4aeafby" path="res://Collectible/plushie.tscn" id="4_aqk2v"]
-[ext_resource type="PackedScene" uid="uid://c53o3ep75d2kj" path="res://Modules/Ball Pit/ball_pit.tscn" id="6_dwbse"]
+[ext_resource type="PackedScene" uid="uid://c82mr3lx31gt1" path="res://Collectible/plush_elephant.tscn" id="5_dwbse"]
+[ext_resource type="PackedScene" uid="uid://ceh5blwbe7xri" path="res://Collectible/plush_nounours.tscn" id="6_pkg7o"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gv5m4"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -87,10 +87,3 @@ id = 1
 [node name="Plush Nounours" parent="." instance=ExtResource("6_pkg7o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4526043, 12.809069, 9.048141)
 id = 2
-
-[node name="shape" type="MeshInstance3D" parent="plushie3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5287173, 0)
-mesh = SubResource("CapsuleMesh_pkg7o")
-
-[node name="Ball Pit" parent="." instance=ExtResource("6_dwbse")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.148422, 12.910983, -3.0428243)

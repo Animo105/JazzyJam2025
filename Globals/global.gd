@@ -3,6 +3,7 @@ signal plushCollected(id : int)
 signal lookingAtPlush(looking : bool)
 signal message(text : String)
 signal is_chasing(enable : bool)
+signal is_hiding()
 
 const WIN_AMOUNT_PLUSHIES : int = 3
 

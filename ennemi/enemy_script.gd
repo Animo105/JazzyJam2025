@@ -21,12 +21,15 @@ var state := State.PATROL
 var speed := patrol_speed
 var hit_height : float
 
-
 func _ready():
 	if patrol_points.size() > 0:
 		nav_agent.target_position = patrol_points[0].global_position
 	animation_player.play("Walk")
+	Global.is_hiding.connect(_stop_patrol)
 
+func _stop_patrol():
+	if state == State.CHASE:
+		enter_patrol_state()
 
 func _physics_process(delta):
 	match state:
@@ -36,10 +39,6 @@ func _physics_process(delta):
 			if !player.is_hiding && detect_player():
 				enter_chase_state()
 		State.CHASE:
-			if player.is_hiding:
-				print("go patrol")
-				enter_patrol_state()
-				return
 			chase_behavior()
 			if detect_player():
 				chase_timer.start()

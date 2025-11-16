@@ -9,6 +9,8 @@ var in_ball_pit : bool = false:
 	set(value):
 		in_ball_pit = value
 		player.is_hiding = value
+		if value:
+			Global.is_hiding.emit()
 		player.camera_effects.ball_effect = value
 
 func check_in_ball_pit():

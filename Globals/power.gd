@@ -6,7 +6,7 @@ signal recharging(bool)
 
 var power : int:
 	set(value):
-		power = value
+		power = clamp(value, 0, 100)
 		on_power_update.emit(value)
 var timer : Timer = Timer.new()
 var timerCharge : Timer = Timer.new()
@@ -37,8 +37,7 @@ func _on_flashlight_change(is_on : bool):
 		timer.stop()
 
 func _on_timer_timeout():
-	if power >= 0:
-		power -= 5
+	power -= 5
 
 func _on_recharge(recharginOn : bool):
 	if recharginOn:
@@ -49,5 +48,4 @@ func _on_recharge(recharginOn : bool):
 		print("charging_stopped")
 
 func _on_timerCharge_timeout():
-	if power < 100:
-		power +=5
+	power +=5

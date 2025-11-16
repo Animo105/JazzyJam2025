@@ -1,7 +1,7 @@
 extends PlayerState
 class_name PlayerAirState
 
-const SPEED : float = 5
+const SPEED : float = 3
 const ACCELERATION : float = 0.2
 const DECELERATION : float = 0.4
 @onready var stepup: CollisionShape3D = $"../../stepup"

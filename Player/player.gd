@@ -9,7 +9,7 @@ class_name Player
 @onready var camera_effects: CameraEffetcs = $neck/camera/CameraCanvas
 @onready var steps: AudioStreamPlayer = $steps
 @onready var fsm: PlayerFSM = $PlayerFSM
-@onready var ray_cast_3d_2: RayCast3D = $RayCast3D2
+@onready var range: RayCast3D = $range
 
 const DEFAUT_CAM_POS : Vector3 = Vector3(0, 0.9, 0)
 const CROUCH_CAM_POS : Vector3 = Vector3(0, 0.4, 0)
@@ -113,3 +113,8 @@ func _input(event: InputEvent) -> void:
 
 func apply_gravity(delta : float)->void:
 	velocity += get_gravity() * delta
+
+func check_range():
+	#if range.is_colliding() && range.get_collider() == 
+		#if is interactible
+	pass

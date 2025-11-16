@@ -113,8 +113,8 @@ layer = 2
 light_color = Color(0.2520276, 0.25202766, 0.25202763, 1)
 omni_range = 3.8831172
 
-[node name="RayCast3D" type="RayCast3D" parent="neck/camera"]
-target_position = Vector3(0, 0, -4)
+[node name="range" type="RayCast3D" parent="neck/camera"]
+target_position = Vector3(0, 0, -0.7)
 
 [node name="Gui" parent="." instance=ExtResource("7_vtle1")]
 

@@ -4,6 +4,7 @@ extends Control
 @onready var audio_stream_player: AudioStreamPlayer = $Menu/Help/AudioStreamPlayer
 
 func _ready() -> void:
+	Power.reset()
 	MusicPanel.plays_menu_music(true)
 	animation_player.play("Dance")
 

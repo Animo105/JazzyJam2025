@@ -24,7 +24,13 @@ func _ready() -> void:
 	power = 100
 	flashlight_on.connect(_on_flashlight_change)
 	recharging.connect(_on_recharge)
-	
+
+func reset():
+	timer.wait_time = 5
+	timerCharge.wait_time = 0.5
+	timer.autostart = true
+	timerCharge.autostart = true
+	power = 100
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

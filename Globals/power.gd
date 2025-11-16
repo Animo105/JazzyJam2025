@@ -10,7 +10,6 @@ var power : int:
 		on_power_update.emit(value)
 var timer : Timer = Timer.new()
 var timerCharge : Timer = Timer.new()
-var charging : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -44,15 +43,11 @@ func _on_timer_timeout():
 func _on_recharge(recharginOn : bool):
 	if recharginOn:
 		timerCharge.start()
+		print("charging_start")
 	elif !recharginOn:
 		timerCharge.stop()
-		charging = false
-		Stamina.timerStaminaRegen.start()
+		print("charging_stopped")
 
 func _on_timerCharge_timeout():
-	charging = true
-	if Stamina.stamina > 0:
-		Stamina.timerStaminaRegen.stop()
-		if power < 100:
-			power +=2
-			Stamina.stamina -= 10
+	if power < 100:
+		power +=5

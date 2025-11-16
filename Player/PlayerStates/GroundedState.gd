@@ -27,6 +27,8 @@ func physics_update(_delta:float):
 	transition()
 
 func transition():
+	if Input.is_action_just_pressed("recharging"):
+		fsm.change_state("windingflashlight")
 	if Input.is_action_just_pressed("Run"):
 		if (Stamina.stamina > 0):
 			fsm.change_state("run")
@@ -34,13 +36,13 @@ func transition():
 		if (Stamina.stamina >= 10):
 			Stamina.stamina -= 10
 			fsm.change_state("jump")
-			
 		else:
 			Stamina.stamina_bar_color.emit()
 	if Input.is_action_just_pressed("slide"):
 		fsm.change_state('crouch')
 	if !player.is_on_floor():
 		fsm.change_state('air')
+
 
 func _on_step_timeout()->void:
 	player.play_step_sound()

@@ -78,5 +78,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.864225, 12.578791, 4.6087
 player = NodePath("../Player")
 patrol_points = [NodePath("../PatrolPoints/Pos1"), NodePath("../PatrolPoints/Pos2"), NodePath("../PatrolPoints/Pos4"), NodePath("../PatrolPoints/Pos5"), NodePath("../PatrolPoints/Pos6"), NodePath("../PatrolPoints/Pos7"), NodePath("../PatrolPoints/Pos8")]
 
-[node name="Collectibles" parent="." instance=ExtResource("4_aqk2v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.363663, 13.28644, 130.85457)
+[node name="plushie" parent="." instance=ExtResource("4_aqk2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.95066, 14.767035, 137.08888)

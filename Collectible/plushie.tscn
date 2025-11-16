@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcj5as4aeafby"]
+
+[ext_resource type="Script" uid="uid://bvjuloljdbu8c" path="res://Collectible/plushie.gd" id="1_tfstf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5a81k"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wivcb"]
+
+[node name="plushie" type="Node3D"]
+script = ExtResource("1_tfstf")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.53042555, 0)
+shape = SubResource("BoxShape3D_5a81k")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5287173, 0)
+mesh = SubResource("BoxMesh_wivcb")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

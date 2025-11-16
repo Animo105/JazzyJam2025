@@ -107,6 +107,7 @@ shadow_mesh = SubResource("ArrayMesh_sf88t")
 size = Vector3(0.3735962, 0.53759766, 0.4407959)
 
 [node name="plush" type="StaticBody3D"]
+collision_layer = 16
 script = ExtResource("1_ok0ch")
 metadata/_custom_type_script = "uid://bvjuloljdbu8c"
 
